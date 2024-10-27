@@ -48,7 +48,7 @@ export default function Home() {
             />
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink onClick={() => handleScroll('home')} className="hover:cursor-pointer font-bold text-lg sm:text-xl">Home</NavigationMenuLink>
+                <NavigationMenuLink onClick={() => handleScroll('home')} className="hover:cursor-pointer font-bold text-lg sm:text-xl pr-3">Home</NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </div>
