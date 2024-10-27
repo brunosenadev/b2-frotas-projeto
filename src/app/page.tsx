@@ -136,10 +136,12 @@ export default function Home() {
           >
             Contato
           </h2>
-          <div className="flex flex-col space-y-6w-full max-w-4xl">
+          <div className="flex flex-col space-y-6 w-full max-w-4xl mx-auto">
             <div className="flex flex-col items-center justify-between px-4 py-6 border-t border-b border-gray-700 hover:border-gray-500">
               <div className="text-md items-center sm:text-lg text-gray-300">
-                <p>Leve sua marca para as estradas com inovação e confiança. <br /> Vamos juntos transformar a identidade da sua empresa!</p>
+                <p className="text-center">
+                  Leve sua marca para as estradas com inovação e confiança. <br /> Vamos juntos transformar a identidade da sua empresa!
+                </p>
                 <br /><br />
                 <div className="flex space-x-4 items-center justify-center">
                   <a href="https://wa.me/554792566795" target="_blank" rel="noopener noreferrer">
@@ -156,7 +158,7 @@ export default function Home() {
                   </a>
                 </div>
                 <br />
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">Entre em contato</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 text-center">Entre em contato</h3>
                 <div className="mb-6">
                   <p className="text-lg">
                     <strong className="text-white">Email:</strong>
@@ -177,11 +179,11 @@ export default function Home() {
                   </p>
                 </div>
 
-                <h4 className="text-xl sm:text-2xl font-bold text-white mb-4">Localização</h4>
-                <div className="mb-6">
+                <h4 className="text-xl sm:text-2xl font-bold text-white mb-4 text-center">Localização</h4>
+                <div className="mb-6 w-full md:w-3/4 lg:w-1/2">
                   <iframe
                     src="https://maps.google.com.br/maps?q=B2+Frotas+-+Personalização+de+Frotas&output=embed"
-                    width="900"
+                    width="100%"
                     height="300"
                     style={{ border: 0 }}
                     allowFullScreen
