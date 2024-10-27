@@ -48,7 +48,7 @@ export default function Home() {
             />
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink onClick={() => handleScroll('home')} className="hover:cursor-pointer font-bold text-lg sm:text-xl pr-3">Home</NavigationMenuLink>
+                <NavigationMenuLink onClick={() => handleScroll('home')} className="hover:cursor-pointer font-bold text-lg sm:text-xl pr-14">Home</NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </div>
@@ -183,7 +183,7 @@ export default function Home() {
                 <div className="mb-6 w-full md:w-3/4 lg:w-1/2">
                   <iframe
                     src="https://maps.google.com.br/maps?q=B2+Frotas+-+Personalização+de+Frotas&output=embed"
-                    width="100%"
+                    width="900"
                     height="300"
                     style={{ border: 0 }}
                     allowFullScreen
