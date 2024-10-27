@@ -36,7 +36,7 @@ export default function Home() {
     >
       <div className="fixed top-0 left-0 w-full z-50">
         <NavigationMenu
-          className="shadow-lg w-full mt-1 bg-transparent min-w-full backdrop-blur-md h-[60px] flex items-center justify-between overflow-x-auto"
+          className="shadow-lg w-full mt-1 bg-transparent min-w-full pr-20 backdrop-blur-md h-[60px] flex items-center justify-between overflow-x-auto"
         >
           <div className="flex items-center ml-4">
             <Image
