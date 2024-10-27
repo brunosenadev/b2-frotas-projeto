@@ -48,22 +48,48 @@ export default function Home() {
             />
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink onClick={() => handleScroll('home')} className="hover:cursor-pointer font-bold pr-20 text-lg sm:text-xl pr-30">Home</NavigationMenuLink>
+                <NavigationMenuLink
+                  onClick={() => handleScroll('home')}
+                  className="hover:cursor-pointer font-bold text-lg sm:text-xl"
+                >
+                  Home
+                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </div>
-          <NavigationMenuList className="flex items-center space-x-6 mr-4">
+          <NavigationMenuList className="flex items-center space-x-4 mr-4 flex-wrap">
             <NavigationMenuItem>
-              <NavigationMenuLink onClick={() => handleScroll('about')} className="hover:cursor-pointer font-bold text-lg sm:text-xl" style={{ whiteSpace: "nowrap" }}>Quem Somos</NavigationMenuLink>
+              <NavigationMenuLink
+                onClick={() => handleScroll('about')}
+                className="hover:cursor-pointer font-bold text-lg sm:text-xl"
+                style={{ whiteSpace: "nowrap" }}
+              >
+                Quem Somos
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink onClick={() => handleScroll('services')} className="hover:cursor-pointer font-bold text-lg sm:text-xl">Serviços</NavigationMenuLink>
+              <NavigationMenuLink
+                onClick={() => handleScroll('services')}
+                className="hover:cursor-pointer font-bold text-lg sm:text-xl"
+              >
+                Serviços
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink onClick={() => handleScroll('portfolio')} className="hover:cursor-pointer font-bold text-lg sm:text-xl">Portfólio</NavigationMenuLink>
+              <NavigationMenuLink
+                onClick={() => handleScroll('portfolio')}
+                className="hover:cursor-pointer font-bold text-lg sm:text-xl"
+              >
+                Portfólio
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink onClick={() => handleScroll('contact')} className="mr-2 hover:cursor-pointer font-bold text-lg sm:text-xl">Contato</NavigationMenuLink>
+              <NavigationMenuLink
+                onClick={() => handleScroll('contact')}
+                className="mr-2 hover:cursor-pointer font-bold text-lg sm:text-xl"
+              >
+                Contato
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
