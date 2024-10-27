@@ -48,13 +48,13 @@ export default function Home() {
             />
             <NavigationMenuList>
               <NavigationMenuItem>
-                <NavigationMenuLink onClick={() => handleScroll('home')} className="hover:cursor-pointer font-bold text-lg sm:text-xl pr-14">Home</NavigationMenuLink>
+                <NavigationMenuLink onClick={() => handleScroll('home')} className="hover:cursor-pointer font-bold text-lg sm:text-xl pr-30">Home</NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </div>
           <NavigationMenuList className="flex items-center space-x-6 mr-4">
             <NavigationMenuItem>
-              <NavigationMenuLink onClick={() => handleScroll('about')} className="hover:cursor-pointer font-bold text-lg sm:text-xl">Quem Somos</NavigationMenuLink>
+              <NavigationMenuLink onClick={() => handleScroll('about')} className="hover:cursor-pointer font-bold text-lg sm:text-xl" style={{ whiteSpace: "nowrap" }}>Quem Somos</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink onClick={() => handleScroll('services')} className="hover:cursor-pointer font-bold text-lg sm:text-xl">Serviços</NavigationMenuLink>
@@ -180,15 +180,16 @@ export default function Home() {
                 </div>
 
                 <h4 className="text-xl sm:text-2xl font-bold text-white mb-4 text-center">Localização</h4>
-                <div className="mb-6 w-full md:w-3/4 lg:w-1/2">
+                <div className="mb-6 w-full">
                   <iframe
                     src="https://maps.google.com.br/maps?q=B2+Frotas+-+Personalização+de+Frotas&output=embed"
                     width="900"
                     height="300"
                     style={{ border: 0 }}
                     allowFullScreen
-                    loading="lazy">
-                  </iframe>
+                    loading="lazy"
+                    className="w-full md:w-[900px]"
+                  ></iframe>
                 </div>
               </div>
             </div>
