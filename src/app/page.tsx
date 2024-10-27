@@ -46,7 +46,7 @@ export default function Home() {
             </NavigationMenuList>
           </div>
           <NavigationMenuList className="flex items-center space-x-6 mr-4">
-          <NavigationMenuItem>
+            <NavigationMenuItem>
               <NavigationMenuLink onClick={() => handleScroll('about')}>Quem Somos</NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
@@ -67,7 +67,7 @@ export default function Home() {
             Bem-vindo à B2 Frotas
           </h1>
         </section>
-        <section id="about" className="min-h-screen flex flex-col items-center justify-center px-4">
+        <section id="about" className="min-h-screen flex flex-col items-center justify-center px-4 pt-20">
           <h2
             className="text-3xl sm:text-4xl font-bold tracking-wide mb-4"
             style={{
