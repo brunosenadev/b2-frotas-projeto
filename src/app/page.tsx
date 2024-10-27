@@ -9,7 +9,7 @@ import {
 import Image from "next/image";
 
 export default function Home() {
-  const handleScroll = (id: any) => {
+  const handleScroll = (id: string) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
@@ -73,7 +73,7 @@ export default function Home() {
 
         <section id="services" className="min-h-screen flex flex-col items-center justify-center text-center">
           <h2
-            className="text-4xl font-bold tracking-wide mb-10"
+            className="text-4xl font-bold tracking-wide mb-4"
             style={{
               fontFamily: 'Poppins, sans-serif',
               color: '#FFFFFF',
@@ -107,7 +107,7 @@ export default function Home() {
         </section>
         <section id="about" className="min-h-screen flex flex-col items-center justify-center">
         <h2
-            className="text-4xl font-bold tracking-wide mb-10"
+            className="text-4xl font-bold tracking-wide mb-4"
             style={{
               fontFamily: 'Poppins, sans-serif',
               color: '#FFFFFF',
