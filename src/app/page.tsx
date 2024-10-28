@@ -112,7 +112,7 @@ export default function Home() {
           </h2>
           <div className="flex flex-col space-y-6 w-full max-w-4xl">
             <div className="flex flex-col items-center justify-between px-4 py-6 border-t border-b border-gray-700 hover:border-gray-500 transition duration-300">
-              <p className="text-lg sm:text-2xl text-gray-300">
+              <p className="text-lg sm:text-1xl text-gray-300">
                 Há 30 anos no mercado, a B2 Personalização de Frotas é referência em serviços de pintura, adesivação e personalização de baús e veículos de carga. Nossa missão é transformar cada frota em uma extensão da identidade visual de nossos clientes, entregando qualidade, eficiência e durabilidade em cada projeto.
                 <br /><br />
                 Especialistas na pintura de baús de caminhões, oferecemos soluções sob medida para empresas que buscam destacar sua marca nas estradas e fortalecer sua presença no mercado. Com uma equipe experiente e comprometida, garantimos excelência em cada detalhe, desde a escolha dos materiais até a execução final.
@@ -134,7 +134,7 @@ export default function Home() {
           >
             Nossos Serviços
           </h2>
-          <div className="flex flex-wrap justify-center space-x-4 w-full max-w-4xl transition duration-300">
+          <div className="flex flex-no-wrap justify-center space-x-6 w-full max-w-6xl mx-auto my-8 transition duration-300">
             {[
               { title: "Pintura de Baús – Todos os Tipos e Tamanho", description: `Somos especialistas na pintura de baús para diversos tipos de veículos e segmentos, garantindo um acabamento impecável e durável. Trabalhamos com baús de todos os tamanhos e proporcionamos máxima proteção e estética, valorizando a identidade visual do cliente.` },
               { title: "Pintura de Baús Side", description: "Nosso serviço de pintura de baús sider é desenvolvido com técnicas precisas e materiais de alta resistência, preservando a flexibilidade do sider e mantendo a durabilidade mesmo com o desgaste natural do uso diário." },
@@ -142,10 +142,10 @@ export default function Home() {
             ].map((service) => (
               <div
                 key={service.title}
-                className="flex flex-col items-center justify-between bg-gray-800 shadow-lg rounded-lg transition-transform transform hover:scale-105 w-72 px-4 py-6 mb-4"
+                className="flex flex-col items-center justify-between bg-gray-900 shadow-2xl rounded-xl transition-transform transform hover:scale-105 hover:bg-gray-700 hover:shadow-gray-300/50 w-[34%] px-8 py-12 mb-6"
               >
-                <h3 className="text-xl sm:text-2xl font-semibold text-white mb-4">{service.title}</h3>
-                <p className="text-md sm:text-xl text-gray-300 text-center">
+                <h3 className="text-xl sm:text-2xl font-bold text-white tracking-wide mb-2 text-center">{service.title}</h3>
+                <p className="text-md sm:text-lg text-gray-300 text-center leading-relaxed">
                   {service.description}
                 </p>
               </div>
