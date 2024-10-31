@@ -9,7 +9,7 @@ import {
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faEnvelope, faAward, faHandshake, faTruck, faPaintBrush } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from "react";
 import ContactForm from "./contact";
 
@@ -35,9 +35,10 @@ export default function Home() {
         padding: 0,
         color: '#FFFFFF',
       }}
+      className=""
     >
       <div
-        className="fixed top-0 left-0 w-full z-50 bg-transparent"
+        className="fixed top-0 left-0 w-full z-50"
         style={{
           background: 'rgba(41,52,74,255)'
         }}
@@ -110,7 +111,7 @@ export default function Home() {
           />
         </section>
         <section id="about" className="min-h-screen flex items-center justify-center text-start px-4 pt-20">
-          <div className="flex w-full max-w-6xl">
+          <div className="flex w-full max-w-7xl">
             <div className="flex-1 flex flex-col justify-center px-4">
               <h2
                 className="text-3xl sm:text-4xl font-bold tracking-wide text-black mb-6"
@@ -120,15 +121,51 @@ export default function Home() {
               >
                 Sobre nós
               </h2>
-              <p className="text-lg sm:text-xl text-black">
-                Há 30 anos no mercado, a B2 Personalização de Frotas é referência em serviços de pintura, adesivação e personalização de baús e veículos de carga. Nossa missão é transformar cada frota em uma extensão da identidade visual de nossos clientes, entregando qualidade, eficiência e durabilidade em cada projeto.
-                <br /><br />
-                Especialistas na pintura de baús de caminhões, oferecemos soluções sob medida para empresas que buscam destacar sua marca nas estradas e fortalecer sua presença no mercado. Com uma equipe experiente e comprometida, garantimos excelência em cada detalhe, desde a escolha dos materiais até a execução final.
-                <br /><br />
-                Na B2, cada veículo personalizado é uma prova do nosso compromisso com inovação e confiança, fortalecendo parcerias e ajudando nossos clientes a seguirem rumo ao sucesso.
-                <br /><br />
-                Comprometimento, inovação, excelência e confiança são os pilares que sustentam nosso trabalho. Acreditamos que cada frota personalizada reflete não apenas a identidade da empresa, mas também o nosso compromisso com a qualidade e o sucesso do cliente.
+              <p className="text-xl font-semibold italic text-gray-700 mb-6">
+                "Transformando frotas em ícones de identidade e qualidade nas estradas!"
               </p>
+              <div className="space-y-6">
+                {/* Tópico 1 */}
+                <div className="flex items-center mb-4">
+                  <FontAwesomeIcon icon={faPaintBrush} size="lg" className="mr-3 text-blue-500" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-black mb-1">Experiência e Excelência</h3>
+                    <p className="text-lg sm:text-xl text-black">
+                      Com 30 anos de atuação, a B2 Personalização de Frotas é referência em pintura e personalização de veículos de carga, garantindo qualidade e durabilidade em cada projeto.
+                    </p>
+                  </div>
+                </div>
+                {/* Tópico 2 */}
+                <div className="flex items-center mb-4">
+                  <FontAwesomeIcon icon={faTruck} size="lg" className="mr-3 text-red-500" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-black mb-1">Soluções Sob Medida</h3>
+                    <p className="text-lg sm:text-xl text-black">
+                      Oferecemos serviços exclusivos para empresas que buscam destacar suas frotas, garantindo excelência em todos os detalhes, desde os materiais até a execução final.
+                    </p>
+                  </div>
+                </div>
+                {/* Tópico 3 */}
+                <div className="flex items-center mb-4">
+                  <FontAwesomeIcon icon={faHandshake} size="lg" className="mr-3 text-green-500" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-black mb-1">Parcerias Fortes e Confiáveis</h3>
+                    <p className="text-lg sm:text-xl text-black">
+                      Cada veículo personalizado é uma prova de nosso compromisso com a inovação e a confiança, refletindo a identidade dos nossos clientes e construindo parcerias de sucesso.
+                    </p>
+                  </div>
+                </div>
+                {/* Tópico 4 */}
+                <div className="flex items-center mb-4">
+                  <FontAwesomeIcon icon={faAward} size="lg" className="mr-3 text-yellow-500" />
+                  <div>
+                    <h3 className="text-2xl font-bold text-black mb-1">Valores que Guiam Nosso Trabalho</h3>
+                    <p className="text-lg sm:text-xl text-black">
+                      Comprometimento, inovação, excelência e confiança são os pilares da nossa missão, garantindo que cada projeto entregue seja de alta qualidade e focado no sucesso do cliente.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="flex-1 flex justify-center items-center px-4">
               <Image
@@ -184,7 +221,7 @@ export default function Home() {
             <div className="flex flex-grid items-start justify-between px-4 py-6 border-t border-gray-700 hover:border-gray-500">
               <div className="text-md items-start sm:text-lg text-black w-full md:w-1/2 mb-6 md:mb-0">
                 <p className="text-start font-semibold">
-                 Entre em contato com a nossa equipe e vamos juntos transformar a identidade da sua empresa!
+                  Entre em contato com a nossa equipe e vamos juntos transformar a identidade da sua empresa!
                 </p>
                 <br />
                 <div className="flex space-x-4 items-start justify-start">
