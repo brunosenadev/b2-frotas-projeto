@@ -76,7 +76,10 @@ const FormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding-bottom: 20px;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 10px;
   background-color: #f7f7f7;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -87,7 +90,6 @@ const FormContainer = styled.div`
 const FormTitle = styled.h2`
   font-size: 24px;
   color: #333;
-  margin-bottom: 20px;
 `;
 
 const Form = styled.form`
