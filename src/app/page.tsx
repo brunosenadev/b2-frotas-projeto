@@ -10,7 +10,6 @@ import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { FaPaintBrush, FaTruck, FaStar } from 'react-icons/fa';
 import { useEffect } from "react";
 import ContactForm from "./contact";
 
