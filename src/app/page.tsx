@@ -122,10 +122,9 @@ export default function Home() {
                 Sobre nós
               </h2>
               <p className="text-xl font-semibold italic text-gray-700 mb-6">
-                "Transformando frotas em ícones de identidade e qualidade nas estradas!"
+              &quot;Transformando frotas em ícones de identidade e qualidade nas estradas!&quot;
               </p>
               <div className="space-y-6">
-                {/* Tópico 1 */}
                 <div className="flex items-center mb-4">
                   <FontAwesomeIcon icon={faPaintBrush} size="lg" className="mr-3 text-blue-500" />
                   <div>
@@ -135,7 +134,6 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                {/* Tópico 2 */}
                 <div className="flex items-center mb-4">
                   <FontAwesomeIcon icon={faTruck} size="lg" className="mr-3 text-red-500" />
                   <div>
@@ -145,7 +143,6 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                {/* Tópico 3 */}
                 <div className="flex items-center mb-4">
                   <FontAwesomeIcon icon={faHandshake} size="lg" className="mr-3 text-green-500" />
                   <div>
@@ -155,7 +152,6 @@ export default function Home() {
                     </p>
                   </div>
                 </div>
-                {/* Tópico 4 */}
                 <div className="flex items-center mb-4">
                   <FontAwesomeIcon icon={faAward} size="lg" className="mr-3 text-yellow-500" />
                   <div>
