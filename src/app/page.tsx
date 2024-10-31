@@ -8,8 +8,11 @@ import {
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp, faInstagram, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faWhatsapp, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FaPaintBrush, FaTruck, FaStar } from 'react-icons/fa';
 import { useEffect } from "react";
+import ContactForm from "./contact";
 
 export default function Home() {
   const handleScroll = (id: string) => {
@@ -41,15 +44,14 @@ export default function Home() {
         }}
       >
         <NavigationMenu
-          className="shadow-lg w-full mt-1 bg-transparent min-w-full backdrop-blur-md h-[60px] flex items-center justify-between overflow-x-auto"
+          className="shadow-lg w-full mt-1 bg-transparent min-w-full backdrop-blur-md h-[60px] flex justify-between overflow-x-auto"
         >
-          <div className="flex items-center ml-4">
+          <div className="flex ml-4">
             <Image
               src="/b2.jpg"
               alt="Logo"
-              width={50}
+              width={60}
               height={60}
-              className="mr-2"
             />
           </div>
           <NavigationMenuList className="flex items-center space-x-6 mr-4 flex-wrap">
@@ -96,7 +98,7 @@ export default function Home() {
         </NavigationMenu>
       </div>
       <div className="pt-[70px]">
-        <section id="home" className="min-h-screen flex items-center justify-center text-center px-4">
+        <section id="home" className="flex grid min-h-screen flex items-center justify-center text-center px-4">
           <h1 className="text-3xl sm:text-5xl font-extrabold text-black" style={{ fontFamily: 'Poppins, sans-serif' }}>
             Bem-vindo à B2 Frotas
           </h1>
@@ -105,7 +107,7 @@ export default function Home() {
             alt="Logo"
             width={750}
             height={600}
-            className="object-cover rounded-lg"
+            className="object-cover rounded-2xl"
           />
         </section>
         <section id="about" className="min-h-screen flex items-center justify-center text-start px-4 pt-20">
@@ -157,7 +159,7 @@ export default function Home() {
             ].map((service) => (
               <div
                 key={service.title}
-                className="flex flex-col items-center justify-between bg-gray-900 shadow-2xl rounded-xl transition-transform transform hover:scale-105 hover:bg-gray-200 hover:text-black hover:shadow-gray-300/50 w-[34%] px-8 py-12 mb-6"
+                className="flex flex-col items-center justify-between bg-gray-700 shadow-2xl rounded-xl transition-transform transform hover:scale-105 hover:bg-gray-200 hover:text-black hover:shadow-gray-300/50 w-[34%] px-8 py-12 mb-6"
               >
                 <h3 className="text-xl sm:text-2xl font-bold tracking-wide mb-2 text-center">{service.title}</h3>
                 <p className="text-md sm:text-lg text-center leading-relaxed">
@@ -167,27 +169,26 @@ export default function Home() {
             ))}
           </div>
         </section>
-        <section id="portfolio" className="min-h-screen flex items-center justify-center text-center px-4">
+        <section id="portfolio" className="min-h-screen flex items-center justify-center text-start px-4">
           <h2 className="text-3xl sm:text-4xl font-bold">Nosso Portfólio</h2>
         </section>
-        <section id="contact" className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20">
+        <section id="contact" className="min-h-screen flex flex-col items-center justify-start text-start px-4 pt-20">
           <h2
-            className="text-3xl sm:text-4xl font-bold tracking-wide mb-4"
+            className="text-3xl sm:text-4xl font-bold tracking-wide mb-4 text-black"
             style={{
               fontFamily: 'Poppins, sans-serif',
-              color: '#FFFFFF',
             }}
           >
             Contato
           </h2>
           <div className="flex flex-col space-y-6 w-full max-w-4xl mx-auto">
-            <div className="flex flex-col items-center justify-between px-4 py-6 border-t border-b border-gray-700 hover:border-gray-500">
-              <div className="text-md items-center sm:text-lg text-gray-300">
-                <p className="text-center">
-                  Leve sua marca para as estradas com inovação e confiança. <br /> Vamos juntos transformar a identidade da sua empresa!
+            <div className="flex flex-grid items-start justify-between px-4 py-6 border-t border-gray-700 hover:border-gray-500">
+              <div className="text-md items-start sm:text-lg text-black w-full md:w-1/2 mb-6 md:mb-0">
+                <p className="text-start font-semibold">
+                 Entre em contato com a nossa equipe e vamos juntos transformar a identidade da sua empresa!
                 </p>
-                <br /><br />
-                <div className="flex space-x-4 items-center justify-center">
+                <br />
+                <div className="flex space-x-4 items-start justify-start">
                   <a href="https://wa.me/554792566795" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faWhatsapp} size="2x" style={{ color: '#25D366' }} />
                   </a>
@@ -197,44 +198,64 @@ export default function Home() {
                   <a href="https://www.facebook.com/seu-perfil-facebook" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faFacebook} size="2x" style={{ color: '#4267B2' }} />
                   </a>
-                  <a href="https://www.linkedin.com/in/seu-perfil-linkedin" target="_blank" rel="noopener noreferrer">
+                  {/* <a href="https://www.linkedin.com/in/seu-perfil-linkedin" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ color: '#0e76a8' }} />
-                  </a>
+                  </a> */}
                 </div>
                 <br />
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 text-center">Entre em contato</h3>
-                <div className="mb-6">
-                  <p className="text-lg">
-                    <strong className="text-white">Email:</strong>
-                    <br />
-                    <a href="mailto:brunocdesena@gmail.com" className="text-gray-300 hover:text-gray-400">brunocdesena@gmail.com</a>
-                    <br />
-                    <a href="mailto:brunocdesenadesenvolvedor@gmail.com" className="text-gray-300 hover:text-gray-400">brunocdesenadesenvolvedor@gmail.com</a>
-                  </p>
-
-                  <p className="text-lg mt-4">
-                    <strong className="text-white">Telefone:</strong>
-                    <br />
-                    <a href="tel:+5547992566795" className="text-gray-300 hover:text-gray-400">(47) 99256-6795</a>
-                    <br />
-                    <a href="tel:+5547991703964" className="text-gray-300 hover:text-gray-400">(47) 99170-3964</a>
-                    <br />
-                    <a href="tel:+5547997511418" className="text-gray-300 hover:text-gray-400">(47) 99751-1418</a>
-                  </p>
+                <div className="flex flex-col md:flex-row justify-between items-start">
+                  <div className="mt-1">
+                    <h3 className="text-xl sm:text-2xl font-bold text-black mb-4 text-start">Entre em contato</h3>
+                    <p className="text-lg">
+                      <strong className="text-black">Email:</strong>
+                      <br />
+                      <a href="mailto:brunocdesena@gmail.com" className="text-black">
+                        <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                        brunocdesena@gmail.com
+                      </a>
+                      <br />
+                      <a href="mailto:brunocdesenadesenvolvedor@gmail.com" className="text-black">
+                        <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                        brunocdesenadesenvolvedor@gmail.com
+                      </a>
+                    </p>
+                    <p className="text-lg mt-4">
+                      <strong className="text-black">Telefone:</strong>
+                      <br />
+                      <a href="tel:+5547992566795" className="text-black">
+                        <FontAwesomeIcon icon={faPhone} className="mr-2" />
+                        (47) 99256-6795
+                      </a>
+                      <br />
+                      <a href="tel:+5547991703964" className="text-black">
+                        <FontAwesomeIcon icon={faPhone} className="mr-2" />
+                        (47) 99170-3964
+                      </a>
+                      <br />
+                      <a href="tel:+5547997511418" className="text-black">
+                        <FontAwesomeIcon icon={faPhone} className="mr-2" />
+                        (47) 99751-1418
+                      </a>
+                    </p>
+                  </div>
                 </div>
-
-                <h4 className="text-xl sm:text-2xl font-bold text-white mb-4 text-center">Localização</h4>
-                <div className="mb-6 w-full">
-                  <iframe
-                    src="https://maps.google.com.br/maps?q=B2+Frotas+-+Personalização+de+Frotas&output=embed"
-                    width="900"
-                    height="300"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    className="w-full md:w-[900px]"
-                  ></iframe>
-                </div>
+              </div>
+              <div className="w-full md:w-1/2 flex justify-center md:justify-start">
+                <ContactForm />
+              </div>
+            </div>
+            <h4 className="text-xl sm:text-2xl font-bold text-black mb-4 text-center">Localização</h4>
+            <div className="pb-10">
+              <div className="mb-6 pb-4 w-full text-black border-b border-gray-700">
+                <iframe
+                  src="https://maps.google.com.br/maps?q=B2+Frotas+-+Personalização+de+Frotas&output=embed"
+                  width="900"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  className="w-full md:w-[900px]"
+                ></iframe>
               </div>
             </div>
           </div>
