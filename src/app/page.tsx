@@ -9,7 +9,7 @@ import {
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faPhone, faEnvelope, faAward, faHandshake, faTruck, faPaintBrush } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from "react";
 import ContactForm from "./contact";
 
