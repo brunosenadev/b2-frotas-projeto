@@ -37,14 +37,24 @@ export default function Home() {
       }}
       className=""
     >
-      <div
-        className="fixed top-0 left-0 w-full z-50"
-        style={{
-          background: 'rgba(41,52,74,255)'
-        }}
-      >
+      <div className="fixed top-0 left-0 w-full z-50">
+        <div className="text-end pr-80 overflow-x-auto min-w-full h-[25px]" style={{ background: 'rgba(41,52,74,255)' }}>
+          <a href="tel:+5547992566795" className="text-white mr-4">
+            <FontAwesomeIcon icon={faPhone} className="mr-2 text-white" />
+            (47) 99256-6795
+          </a>
+          <a href="https://wa.me/554792566795" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faWhatsapp} size="1x" style={{ color: 'white' }} className="mr-2 mt-2"/>
+            (47) 99256-6795
+          </a>
+          <a href="https://wa.me/554792566795" target="_blank" rel="noopener noreferrer">
+            <FontAwesomeIcon icon={faEnvelope} size="1x" style={{ color: 'white' }} className="ml-3  mr-1 mt-2"/>
+            teste@desenvolvimento.com.br
+          </a>
+        </div>
         <NavigationMenu
-          className="shadow-lg w-full mt-1 bg-transparent min-w-full backdrop-blur-md h-[120px] flex justify-between overflow-x-auto pr-80"
+          className="shadow-lg w-full bg-transparent min-w-full backdrop-blur-md h-[100px] flex justify-between overflow-x-auto pr-80"
+          style={{ background: 'rgba(41,52,74,255)' }}
         >
           <div className="flex ml-4 pl-80 flex space-x-4">
             <Image
@@ -64,10 +74,12 @@ export default function Home() {
             <NavigationMenuItem>
               <NavigationMenuLink
                 onClick={() => handleScroll('home')}
-                className="hover:cursor-pointer text-lg sm:text-lg mr-6"
+                className="hover:cursor-pointer text-lg sm:text-lg"
               >
                 HOME
               </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
               <NavigationMenuLink
                 onClick={() => handleScroll('about')}
                 className="hover:cursor-pointer text-lg sm:text-lg"
@@ -133,7 +145,7 @@ export default function Home() {
           <div className="flex w-full max-w-7xl">
             <div className="flex-1 flex flex-col justify-center px-4">
               <div className="flex items-center justify-center mb-6">
-                <div className="flex-1 h-[3px] bg-red-500 mr-4 max-w-sm"></div>
+                <div className="flex-1 h-[3px] bg-red-500 mr-4 max-w-lg"></div>
                 <h2
                   className="text-3xl sm:text-3xl font-bold tracking-wide text-black text-center"
                   style={{
@@ -142,7 +154,7 @@ export default function Home() {
                 >
                   SOBRE NÓS
                 </h2>
-                <div className="flex-1 h-[3px] bg-red-500 ml-4 max-w-sm"></div>
+                <div className="flex-1 h-[3px] bg-red-500 ml-4 max-w-lg"></div>
               </div>
               <p className="text-xl font-semibold italic text-gray-700 mb-6">
                 &quot;Transformando frotas em ícones de identidade e qualidade nas estradas!&quot;
@@ -238,7 +250,7 @@ export default function Home() {
           <div className="flex w-full max-w-7xl grid">
             <div className="flex-1 flex flex-col justify-center px-4">
               <div className="flex items-center justify-center mb-2 ">
-                <div className="flex-1 h-[3px] bg-red-500 mr-4 max-w-sm"></div>
+                <div className="flex-1 h-[3px] bg-red-500 mr-4 max-w-lg"></div>
                 <h2
                   className="text-3xl sm:text-3xl font-bold tracking-wide text-black text-center"
                   style={{
@@ -247,7 +259,7 @@ export default function Home() {
                 >
                   CONTATO
                 </h2>
-                <div className="flex-1 h-[3px] bg-red-500 ml-4 max-w-sm"></div>
+                <div className="flex-1 h-[3px] bg-red-500 ml-4 max-w-lg"></div>
               </div>
               <div className="flex flex-col space-y-6 w-full max-w-4xl mx-auto">
                 <div className="flex flex-grid items-start justify-between px-4 py-6">
@@ -326,7 +338,7 @@ export default function Home() {
                     ></iframe>
                   </div>
                 </div>
-              </div>  
+              </div>
             </div>
           </div>
         </section>
