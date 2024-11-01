@@ -9,7 +9,7 @@ import {
 import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faPhone, faEnvelope, faAward, faHandshake, faTruck, faPaintBrush } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { useEffect } from "react";
 import ContactForm from "./contact";
 
@@ -44,133 +44,132 @@ export default function Home() {
         }}
       >
         <NavigationMenu
-          className="shadow-lg w-full mt-1 bg-transparent min-w-full backdrop-blur-md h-[60px] flex justify-between overflow-x-auto"
+          className="shadow-lg w-full mt-1 bg-transparent min-w-full backdrop-blur-md h-[120px] flex justify-between overflow-x-auto pr-80"
         >
-          <div className="flex ml-4">
+          <div className="flex ml-4 pl-80 flex space-x-4">
             <Image
               src="/b2.jpg"
               alt="Logo"
               width={60}
-              height={60}
+              height={100}
+            />
+            <Image
+              src="/1989.jpg"
+              alt="Logo"
+              width={60}
+              height={100}
             />
           </div>
           <NavigationMenuList className="flex items-center space-x-6 mr-4 flex-wrap">
             <NavigationMenuItem>
               <NavigationMenuLink
                 onClick={() => handleScroll('home')}
-                className="hover:cursor-pointer font-semibold text-lg sm:text-lg mr-6"
+                className="hover:cursor-pointer text-lg sm:text-lg mr-6"
               >
-                Home
+                HOME
               </NavigationMenuLink>
               <NavigationMenuLink
                 onClick={() => handleScroll('about')}
-                className="hover:cursor-pointer font-semibold text-lg sm:text-lg"
-                style={{ whiteSpace: "nowrap" }}
+                className="hover:cursor-pointer text-lg sm:text-lg"
+                style={{
+                  whiteSpace: "nowrap",
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: '400'
+                }}
               >
-                Sobre nós
+                SOBRE NÓS
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink
                 onClick={() => handleScroll('services')}
-                className="hover:cursor-pointer font-semibold text-lg sm:text-lg"
+                className="hover:cursor-pointer text-lg sm:text-lg"
+                style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: '400'
+                }}
               >
-                Serviços
+                SERVIÇOS
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink
                 onClick={() => handleScroll('portfolio')}
-                className="hover:cursor-pointer font-semibold text-lg sm:text-lg"
+                className="hover:cursor-pointer text-lg sm:text-lg"
+                style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: '400'
+                }}
               >
-                Portfólio
+                PORTFÓLIO
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink
                 onClick={() => handleScroll('contact')}
                 className="mr-2 hover:cursor-pointer font-semibold text-lg sm:text-lg"
+                style={{
+                  fontFamily: 'Montserrat, sans-serif',
+                  fontWeight: '400'
+                }}
               >
-                Contato
+                CONTATO
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
       </div>
-      <div className="pt-[70px]">
-        <section id="home" className="flex grid min-h-screen flex items-center justify-center text-center px-4">
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-black" style={{ fontFamily: 'Poppins, sans-serif' }}>
-            Bem-vindo à B2 Frotas
-          </h1>
-          <Image
-            src="/bv2.jpg"
+      <div>
+        <section id="home" className="w-full flex mt-20 pt-11">
+          <img
+            src="/caminhao.svg"
             alt="Logo"
             width={750}
             height={600}
-            className="object-cover rounded-2xl"
+            className="object-cover w-full h-auto"
           />
         </section>
-        <section id="about" className="min-h-screen flex items-center justify-center text-start px-4 pt-20">
+        <section id="about" className="min-h-screen flex items-center justify-center text-center px-4 pt-20 mt-10">
           <div className="flex w-full max-w-7xl">
             <div className="flex-1 flex flex-col justify-center px-4">
-              <h2
-                className="text-3xl sm:text-4xl font-bold tracking-wide text-black mb-6"
+              <div className="flex items-center justify-center mb-6">
+                <div className="flex-1 h-[3px] bg-red-500 mr-4 max-w-sm"></div>
+                <h2
+                  className="text-3xl sm:text-3xl font-bold tracking-wide text-black text-center"
+                  style={{
+                    fontFamily: 'Montserrat, sans-serif',
+                  }}
+                >
+                  SOBRE NÓS
+                </h2>
+                <div className="flex-1 h-[3px] bg-red-500 ml-4 max-w-sm"></div>
+              </div>
+              <p className="text-xl font-semibold italic text-gray-700 mb-6">
+                &quot;Transformando frotas em ícones de identidade e qualidade nas estradas!&quot;
+              </p>
+              <p
+                className="text-black sm:text-xl mb-6"
                 style={{
-                  fontFamily: 'Poppins, sans-serif',
+                  fontFamily: 'Roboto, sans-serif',
                 }}
               >
-                Sobre nós
-              </h2>
-              <p className="text-xl font-semibold italic text-gray-700 mb-6">
-              &quot;Transformando frotas em ícones de identidade e qualidade nas estradas!&quot;
+                Há mais de 30 anos no mercado, a <strong>B2 Frotas</strong> se destaca como uma referência em qualidade e expertise na <strong>pintura e adesivação de baús.</strong> Nosso compromisso com a excelência e a inovação nos coloca na vanguarda do setor, oferecendo soluções personalizadas que atendem às necessidades específicas de cada cliente.
               </p>
-              <div className="space-y-6">
-                <div className="flex items-center mb-4">
-                  <FontAwesomeIcon icon={faPaintBrush} size="lg" className="mr-3 text-blue-500" />
-                  <div>
-                    <h3 className="text-2xl font-bold text-black mb-1">Experiência e Excelência</h3>
-                    <p className="text-lg sm:text-xl text-black">
-                      Com 30 anos de atuação, a B2 Personalização de Frotas é referência em pintura e personalização de veículos de carga, garantindo qualidade e durabilidade em cada projeto.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center mb-4">
-                  <FontAwesomeIcon icon={faTruck} size="lg" className="mr-3 text-red-500" />
-                  <div>
-                    <h3 className="text-2xl font-bold text-black mb-1">Soluções Sob Medida</h3>
-                    <p className="text-lg sm:text-xl text-black">
-                      Oferecemos serviços exclusivos para empresas que buscam destacar suas frotas, garantindo excelência em todos os detalhes, desde os materiais até a execução final.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center mb-4">
-                  <FontAwesomeIcon icon={faHandshake} size="lg" className="mr-3 text-green-500" />
-                  <div>
-                    <h3 className="text-2xl font-bold text-black mb-1">Parcerias Fortes e Confiáveis</h3>
-                    <p className="text-lg sm:text-xl text-black">
-                      Cada veículo personalizado é uma prova de nosso compromisso com a inovação e a confiança, refletindo a identidade dos nossos clientes e construindo parcerias de sucesso.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-center mb-4">
-                  <FontAwesomeIcon icon={faAward} size="lg" className="mr-3 text-yellow-500" />
-                  <div>
-                    <h3 className="text-2xl font-bold text-black mb-1">Valores que Guiam Nosso Trabalho</h3>
-                    <p className="text-lg sm:text-xl text-black">
-                      Comprometimento, inovação, excelência e confiança são os pilares da nossa missão, garantindo que cada projeto entregue seja de alta qualidade e focado no sucesso do cliente.
-                    </p>
-                  </div>
-                </div>
+              <div className="flex grid justify-center mb-6">
+                <Image
+                  src="/bv.jpg"
+                  alt="Logo"
+                  width={500}
+                  height={500}
+                  className="object-cover rounded-lg"
+                />
+                <span className="text-black italic sm:text-sm">
+                  Imagem do primeiro caminhão personalizado em 1989
+                </span>
               </div>
-            </div>
-            <div className="flex-1 flex justify-center items-center px-4">
-              <Image
-                src="/1989.jpg"
-                alt="Logo"
-                width={750}
-                height={600}
-                className="object-cover rounded-lg"
-              />
+              <p className="text-black sm:text-xl" style={{ fontFamily: 'Roboto, sans-serif' }}>
+                Além disso, nos orgulhamos de cultivar relações de confiança e parceria com nossos clientes, entendendo suas necessidades específicas e oferecendo soluções personalizadas que agregam valor ao seu negócio.
+              </p>
             </div>
           </div>
         </section>
