@@ -85,6 +85,35 @@
 } */
 
 
+.perspective {
+  perspective: 1000px; /* Define a profundidade da perspectiva */
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d; /* Preserve o espaço 3D para os filhos */
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg); /* Rotaciona o card para o lado */
+}
+
+/* Adicionais para a animação */
+.transition-transform {
+  transition: transform 0.5s; /* Duração da transição */
+}
+
+/* Garantir que a rotação de Y funcione */
+.hover\:rotate-y-180:hover {
+  transform: rotateY(180deg); /* Aplica a rotação ao passar o mouse */
+}
+
+/* Para o efeito de flip, adicione isso se não estiver funcionando */
+.hover\:rotate-y-180:hover .rotate-y-180 {
+  transform: rotateY(0deg); /* Revela a parte de trás no hover */
+}
+
+  
+
 @layer base {
   * {
     @apply border-border;
