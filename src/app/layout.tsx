@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "B2 Frotas",
-  description: "Site da B2 Frotas",
+  title: "B2 Personalização de Frotas",
+  description: "Site B2 Personalização de Frotas",
 };
 
 export default function RootLayout({
@@ -19,9 +19,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         {children}
       </body>
     </html>
