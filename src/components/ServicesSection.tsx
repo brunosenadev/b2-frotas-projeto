@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaPaintBrush, FaTruck, FaTools, FaSnowflake } from 'react-icons/fa';
+import { FaPaintBrush, FaTruck, FaSnowflake } from 'react-icons/fa';
 
 const ServicesSection = () => {
     const services = [
