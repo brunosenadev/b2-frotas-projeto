@@ -86,7 +86,6 @@ const PortfolioSection = () => {
                                 <Image
                                     src={imagem}
                                     alt={`Caminhão da ${empresas[currentIndex].nome}`}
-                                    layout="responsive"
                                     width={800} // largura desejada
                                     height={500} // altura desejada
                                     style={{
@@ -123,7 +122,6 @@ const PortfolioSection = () => {
                     <Image 
                         src={empresas[currentIndex].imagens[imageIndex]} 
                         alt={`Caminhão da ${empresas[currentIndex].nome}`} 
-                        layout="fill"
                         width={950} // largura desejada para o modal
                         height={800} // altura desejada para o modal
                         style={{ borderRadius: '10px' }} 
