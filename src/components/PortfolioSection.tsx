@@ -97,6 +97,7 @@ const PortfolioSection = () => {
                                         cursor: 'pointer',
                                     }}
                                     onClick={toggleModal}
+                                    loading='lazy'
                                 />
                             </div>
                         ))}
@@ -126,6 +127,7 @@ const PortfolioSection = () => {
                         width={950} // largura desejada para o modal
                         height={800} // altura desejada para o modal
                         style={{ borderRadius: '10px' }} 
+                        loading='lazy'
                     />
                 </div>
             )}
