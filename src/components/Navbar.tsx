@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import Image from 'next/image'
 
-const Navbar = () => {
+const Navbar = memo(() => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleScroll = (id: string) => {
@@ -44,18 +44,50 @@ const Navbar = () => {
                     <NavigationMenuItem
                         className="text-white mx-4 list-none"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
+                        onClick={() => {
+                            handleScroll('home');
+                            setIsOpen(false);
+                        }}
                     >
                         HOME
                     </NavigationMenuItem>
                     <NavigationMenuItem
                         className="text-white mx-4 list-none"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
+                        onClick={() => {
+                            handleScroll('about');
+                            setIsOpen(false);
+                        }}
                     >
-                        SOBRE
+                        SOBRE NÓS
                     </NavigationMenuItem>
                     <NavigationMenuItem
                         className="text-white mx-4 list-none"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
+                        onClick={() => {
+                            handleScroll('services');
+                            setIsOpen(false);
+                        }}
+                    >
+                        SERVIÇOS
+                    </NavigationMenuItem>
+                    <NavigationMenuItem
+                        className="text-white mx-4 list-none"
+                        style={{ fontFamily: 'Montserrat, sans-serif' }}
+                        onClick={() => {
+                            handleScroll('portfolio');
+                            setIsOpen(false);
+                        }}
+                    >
+                        PORTFÓLIO
+                    </NavigationMenuItem>
+                    <NavigationMenuItem
+                        className="text-white mx-4 list-none"
+                        style={{ fontFamily: 'Montserrat, sans-serif' }}
+                        onClick={() => {
+                            handleScroll('contact');
+                            setIsOpen(false);
+                        }}
                     >
                         CONTATO
                     </NavigationMenuItem>
@@ -72,7 +104,7 @@ const Navbar = () => {
             </NavigationMenu>
             {isOpen && (
                 <div
-                    className="fixed top-0 right-0 w-[35%] text-white flex flex-col justify-start items-start text-start md:hidden"
+                    className="fixed top-0 right-0 w-[35%] text-white flex flex-col justify-start items-start text-start md:hidden sm:hidden"
                     style={{ background: 'rgba(41,52,74,255)' }}
                 >
                     <NavigationMenuItem
@@ -153,6 +185,6 @@ const Navbar = () => {
             )}
         </div>
     );
-};
+});
 
 export default Navbar;

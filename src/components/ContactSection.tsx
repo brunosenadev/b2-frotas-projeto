@@ -19,7 +19,7 @@ const ContactSection = () => {
                 >
                     CONTATO
                 </h2>
-                <p className="font-semibold mt-2 text-center">
+                <p className="font-semibold text-lg mt-2 text-center">
                     Entre em contato com a nossa equipe e vamos juntos transformar a identidade da sua empresa!
                 </p>
                 <br />
@@ -37,41 +37,45 @@ const ContactSection = () => {
                     <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ color: '#0e76a8' }} />
                   </a> */}
                 </div>
-                <div className="mt-1 mb-4">
-                    <h3 className="text-xl font-bold text-black mb-4 text-center">Entre em contato</h3>
-                    <p className="text-lg">
-                        <strong className="text-black">Email:</strong>
-                        <br />
-                        <a href="mailto:brunocdesena@gmail.com" className="text-black">
-                            <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-                            brunocdesena@gmail.com
-                        </a>
-                        <br />
-                        <a href="mailto:brunocdesenadesenvolvedor@gmail.com" className="text-black">
-                            <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-                            brunocdesenadesenvolvedor@gmail.com
-                        </a>
-                    </p>
-                    <p className="text-lg mt-4">
-                        <strong className="text-black">Telefone:</strong>
-                        <br />
-                        <a href="tel:+5547992566795" className="text-black">
-                            <FontAwesomeIcon icon={faPhone} className="mr-2" />
-                            (47) 99256-6795
-                        </a>
-                        <br />
-                        <a href="tel:+5547991703964" className="text-black">
-                            <FontAwesomeIcon icon={faPhone} className="mr-2" />
-                            (47) 99170-3964
-                        </a>
-                        <br />
-                        <a href="tel:+5547997511418" className="text-black">
-                            <FontAwesomeIcon icon={faPhone} className="mr-2" />
-                            (47) 99751-1418
-                        </a>
-                    </p>
+                <div className="sm:grid sm:grid-cols-1 md:grid-cols-2 sm:gap-8">
+                    <div className="mt-1 mb-4">
+                        <h2 className="text-2xl font-semibold text-center mb-4 sm:mt-5">Entre em contato</h2>
+                        <p className="text-lg">
+                            <strong className="text-black">Email:</strong>
+                            <br />
+                            <a href="mailto:brunocdesena@gmail.com" className="text-black">
+                                <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                                brunocdesena@gmail.com
+                            </a>
+                            <br />
+                            <a href="mailto:brunocdesenadesenvolvedor@gmail.com" className="text-black">
+                                <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+                                brunocdesenadesenvolvedor@gmail.com
+                            </a>
+                        </p>
+                        <p className="text-lg mt-4">
+                            <strong className="text-black">Telefone:</strong>
+                            <br />
+                            <a href="tel:+5547992566795" className="text-black">
+                                <FontAwesomeIcon icon={faPhone} className="mr-2" />
+                                (47) 99256-6795
+                            </a>
+                            <br />
+                            <a href="tel:+5547991703964" className="text-black">
+                                <FontAwesomeIcon icon={faPhone} className="mr-2" />
+                                (47) 99170-3964
+                            </a>
+                            <br />
+                            <a href="tel:+5547997511418" className="text-black">
+                                <FontAwesomeIcon icon={faPhone} className="mr-2" />
+                                (47) 99751-1418
+                            </a>
+                        </p>
+                    </div>
+                    <div className="sm:pr-4">
+                        <Contact />
+                    </div>
                 </div>
-                <Contact />
                 <p className="text-lg mt-4">
                     <strong className="text-black">Localização:</strong>
                     <iframe

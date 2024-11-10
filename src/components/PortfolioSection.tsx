@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'; // Usando react-icons para as setas
 
 const empresas = [
     {
@@ -21,8 +22,8 @@ const empresas = [
 ];
 
 const PortfolioSection = () => {
-    const [currentIndex, setCurrentIndex] = useState(0); 
-    const [imageIndex, setImageIndex] = useState(0); 
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [imageIndex, setImageIndex] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
@@ -32,7 +33,7 @@ const PortfolioSection = () => {
                 img.src = src;
             });
         });
-    }, []);    
+    }, []);
 
     const handlePrevImage = () => {
         setImageIndex((prevIndex) =>
@@ -91,11 +92,24 @@ const PortfolioSection = () => {
                             </div>
                         ))}
                     </div>
-                    <button onClick={handlePrevImage} style={{ position: 'absolute', top: '50%', left: '10px', transform: 'translateY(-50%)', background: 'transparent', color: '#29374A', border: 'none', padding: '10px', cursor: 'pointer', fontSize: '36px', fontWeight: 'bold', zIndex: 10 }}>
-                        &lt; 
+                    {/* Botões de navegação */}
+                    <button
+                        onClick={handlePrevImage}
+                        className="absolute top-1/2 left-2 transform -translate-y-1/2 flex items-center justify-center bg-[#29374A] bg-opacity-100 text-white w-12 h-12 rounded-full"
+                        style={{
+                            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)', // sombra sutil
+                        }}
+                    >
+                        <FiChevronLeft size={24} />
                     </button>
-                    <button onClick={handleNextImage} style={{ position: 'absolute', top: '50%', right: '10px', transform: 'translateY(-50%)', background: 'transparent', color: '#29374A', border: 'none', padding: '10px', cursor: 'pointer', fontSize: '36px', fontWeight: 'bold', zIndex: 10 }}>
-                        &gt;
+                    <button
+                        onClick={handleNextImage}
+                        className="absolute top-1/2 right-2 transform -translate-y-1/2 flex items-center justify-center bg-[#29374A] bg-opacity-100 text-white w-12 h-12 rounded-full"
+                        style={{
+                            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)', // sombra sutil
+                        }}
+                    >
+                        <FiChevronRight size={24} />
                     </button>
                 </div>
                 <div style={{ marginTop: '20px' }}>
@@ -109,12 +123,12 @@ const PortfolioSection = () => {
             </div>
             {isModalOpen && (
                 <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0, 0, 0, 0.8)', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: 1000 }} onClick={toggleModal}>
-                    <Image 
-                        src={empresas[currentIndex].imagens[imageIndex]} 
-                        alt={`Caminhão da ${empresas[currentIndex].nome}`} 
-                        width={950} // largura desejada para o modal
+                    <Image
+                        src={empresas[currentIndex].imagens[imageIndex]}
+                        alt={`Caminhão da ${empresas[currentIndex].nome}`}
+                        width={800} // largura desejada para o modal
                         height={800} // altura desejada para o modal
-                        style={{ borderRadius: '10px' }} 
+                        style={{ borderRadius: '10px' }}
                         loading='lazy'
                     />
                 </div>

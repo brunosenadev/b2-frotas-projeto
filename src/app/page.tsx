@@ -11,10 +11,12 @@ export default function Home() {
         <div className="overflow-x-hidden w-full min-h-screen">
             <Navbar />
             <HomeSection />
-            <AboutUsSection />
-            <ServicesSection />
-            <PortfolioSection />
-            <ContactSection />
+            <div className="px-4 sm:px-12 lg:px-24 xl:px-24">
+                <AboutUsSection />
+                <ServicesSection />
+                <PortfolioSection />
+                <ContactSection />
+            </div>
         </div>
     );
 }

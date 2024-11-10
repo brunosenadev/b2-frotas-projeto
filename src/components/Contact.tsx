@@ -1,160 +1,115 @@
 import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
-import styled from 'styled-components';
 
 const ContactForm = () => {
-    const form = useRef<HTMLFormElement>(null);
-    const [isSubmitted, setIsSubmitted] = useState(false);
-    const [isError, setIsError] = useState(false);
+  const form = useRef<HTMLFormElement>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isError, setIsError] = useState(false);
 
-    const sendEmail = (e: React.FormEvent) => {
-        e.preventDefault();
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
 
-        if (form.current) {
-            emailjs.sendForm(
-                'YOUR_SERVICE_ID',
-                'YOUR_TEMPLATE_ID',
-                form.current,
-                'YOUR_USER_ID'
-            ).then(
-                (result) => {
-                    setIsSubmitted(true);
-                    setIsError(false);
-                    console.log('Email enviado com sucesso:', result.text);
-                },
-                (error) => {
-                    setIsError(true);
-                    console.log('Erro ao enviar email:', error.text);
-                }
-            );
+    if (form.current) {
+      emailjs.sendForm(
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID',
+        form.current,
+        'YOUR_USER_ID'
+      ).then(
+        (result) => {
+          setIsSubmitted(true);
+          setIsError(false);
+          console.log('Email enviado com sucesso:', result.text);
+        },
+        (error) => {
+          setIsError(true);
+          console.log('Erro ao enviar email:', error.text);
         }
-    };
+      );
+    }
+  };
 
-    return (
-        <FormContainer className='min-w-full'>
-            <FormTitle>Envie uma mensagem</FormTitle>
-            <Form ref={form} onSubmit={sendEmail}>
-                <Label>Nome</Label>
-                <Input type="text" name="name" placeholder="Nome" className='text-black' required />
+  return (
+    <div className="min-w-full p-4">
+      <h2 className="text-2xl font-semibold text-center mb-4">Como podemos ajudar?</h2>
+      <form
+        ref={form}
+        onSubmit={sendEmail}
+        className="w-full max-w-xl mx-auto bg-white p-6 rounded-md shadow-lg rounded-xl"
+        style={{ background: 'rgba(41,52,74,255)' }}
+      >
+        <label
+          className="block text-md text-white"
+          style={{ fontFamily: 'Montserrat, sans-serif' }}
+        >
+          Nome
+        </label>
+        <input
+          type="text"
+          name="name"
+          placeholder="Nome"
+          className="w-full p-2 border border-gray-300 rounded-lg mt-2 text-black"
+          required
+        />
 
-                <Label>Email</Label>
-                <Input type="email" name="email" placeholder="E-mail" className='text-black' required />
+        <label
+          className="block text-md mt-3 text-white"
+          style={{ fontFamily: 'Montserrat, sans-serif' }}
+        >
+          Número
+        </label>
+        <input
+          type="tel"
+          name="phone"
+          placeholder="(47) 91234-5678"
+          pattern="\(\d{2}\) \d{4,5}-\d{4}"
+          required
+          className="w-full p-2 border border-gray-300 rounded-md mt-2 text-black"
+        />
 
-                <Label>Número</Label>
-                <Input
-                    type="tel"
-                    name="phone"
-                    placeholder="Número"
-                    pattern="\(\d{2}\) \d{4,5}-\d{4}" 
-                    required
-                    className='text-black'
-                />
+        <label
+          className="block text-md mt-3 text-white"
+          style={{ fontFamily: 'Montserrat, sans-serif' }}
+        >
+          Email
+        </label>
+        <input
+          type="email"
+          name="email"
+          placeholder="E-mail"
+          className="w-full p-2 border border-gray-300 rounded-md mt-2 text-black"
+          required
+        />
 
-                <Label>Mensagem</Label>
-                <TextArea name="message" placeholder="Sua mensagem" className='text-black' required />
+        <label
+          className="block text-md mt-3 text-white"
+          style={{ fontFamily: 'Montserrat, sans-serif' }}
+        >
+          Assunto
+        </label>
+        <textarea
+          name="message"
+          placeholder="Qual o assunto?"
+          className="w-full p-2 border border-gray-300 rounded-md mt-2 text-black"
+          required
+        />
 
-                <Button
-                    type="submit"
-                    className='shadow-gray-700'
-                    style={{
-                        background: 'rgba(41,52,74,255)'
-                    }}
-                >Enviar Mensagem</Button>
+        <button
+          type="submit"
+          className="w-full mt-6 p-2 bg-white font-bold text-black rounded-lg hover:bg-gray-300 transition duration-300"
+        >
+          Enviar Mensagem
+        </button>
 
-                {isSubmitted && !isError && <SuccessMessage>Email enviado com sucesso!</SuccessMessage>}
-                {isError && <ErrorMessage>Erro ao enviar email. Tente novamente.</ErrorMessage>}
-            </Form>
-        </FormContainer>
-    );
+        {isSubmitted && !isError && (
+          <p className="mt-4 text-green-500 text-center">Email enviado com sucesso!</p>
+        )}
+        {isError && (
+          <p className="mt-4 text-red-500 text-center">Erro ao enviar email. Tente novamente.</p>
+        )}
+      </form>
+    </div>
+  );
 };
 
 export default ContactForm;
-
-// Styled Components
-const FormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 20px;
-  padding-right: 40px;
-  padding-left: 40px;
-  padding-top: 10px;
-  background-color: #f7f7f7;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  margin: 0 auto;
-`;
-
-const FormTitle = styled.h2`
-  font-size: 24px;
-  color: #333;
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
-
-const Label = styled.label`
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: #555;
-`;
-
-const Input = styled.input`
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
-  box-sizing: border-box;
-
-  &:focus {
-    border-color: #0070f3;
-    outline: none;
-  }
-`;
-
-const TextArea = styled.textarea`
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
-  height: 150px;
-  box-sizing: border-box;
-
-  &:focus {
-    border-color: #0070f3;
-    outline: none;
-  }
-`;
-
-const Button = styled.button`
-  padding: 12px 20px;
-  font-size: 16px;
-  background-color: #0070f3;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #005bb5;
-  }
-`;
-
-const SuccessMessage = styled.p`
-  color: green;
-  margin-top: 10px;
-`;
-
-const ErrorMessage = styled.p`
-  color: red;
-  margin-top: 10px;
-`;
