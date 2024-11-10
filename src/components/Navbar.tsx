@@ -4,6 +4,7 @@ import {
     NavigationMenuItem,
     NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
+import Image from 'next/image'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +31,7 @@ const Navbar = () => {
                         <NavigationMenuLink
                             onClick={() => handleScroll('home')}
                             className="hover:cursor-pointer">
-                            <img
+                            <Image
                                 src={'/b2b-vetor.svg'}
                                 alt='b2-logo'
                                 width={40}

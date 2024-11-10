@@ -1,9 +1,10 @@
 import React from 'react';
+import Image from 'next/image'
 
 const HomeSection = () => {
     return (
         <section id="home">
-            <img
+            <Image
                 src="/caminhao.png"
                 alt="Logo"
                 width={750}
