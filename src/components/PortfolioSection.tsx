@@ -5,17 +5,17 @@ const empresas = [
     {
         nome: "Empresa A",
         imagens: [
-            "/caminhao.png",
-            "/caminhao.png",
-            "/caminhao.png",
+            "/bv.webp",
+            "/bv.webp",
+            "/bv.webp",
         ],
     },
     {
         nome: "Empresa B",
         imagens: [
-            "/caminhao.png",
-            "/caminhao.png",
-            "/caminhao.png",
+            "/bv.webp",
+            "/bv.webp",
+            "/bv.webp",
         ],
     },
 ];
