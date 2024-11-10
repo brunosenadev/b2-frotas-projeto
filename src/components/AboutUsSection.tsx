@@ -30,9 +30,9 @@ const AboutSection = () => {
                 </p>
                 <div className="flex flex-col justify-center mt-4">
                     <Image
-                        src="/primeiro-caminhao.png"
+                        src="/primeiro-caminhao.webp"
                         alt="Logo"
-                        width={500}
+                        width={1500}
                         height={500}
                         className="object-cover rounded-lg"
                     />
