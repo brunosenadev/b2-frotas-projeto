@@ -60,16 +60,6 @@ const PortfolioSection = () => {
         setIsModalOpen(!isModalOpen);
     };
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setImageIndex((prevIndex) =>
-                prevIndex === empresas[currentIndex].imagens.length - 1 ? 0 : prevIndex + 1
-            );
-        }, 3000);
-
-        return () => clearInterval(interval);
-    }, [currentIndex]);
-
     return (
         <section id="portfolio" style={{ width: '100%', padding: '40px 20px', textAlign: 'center' }}>
             <h2 className="text-2xl font-semibold tracking-wide text-black" style={{ fontFamily: 'Montserrat, sans-serif' }}>
