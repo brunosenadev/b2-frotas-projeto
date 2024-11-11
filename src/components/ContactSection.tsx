@@ -28,7 +28,7 @@ const ContactSection = () => {
                     </a>
                     <a href="https://www.instagram.com/b2frotasoficial" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faInstagram} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"  style={{ color: '#FF007F' }} />
-                    </a>-
+                    </a>
                     <a href="https://www.facebook.com/seu-perfil-facebook" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faFacebook} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"  style={{ color: 'blue' }} />
                     </a>
