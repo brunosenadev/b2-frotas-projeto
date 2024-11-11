@@ -8,9 +8,8 @@ const ContactSection = () => {
     return (
         <section
             id='contact'
-            className='mt-5'
         >
-            <div className="relative z-10 text-center mt-2">
+            <div className="relative z-10 text-center">
                 <h2
                     className="text-2xl font-semibold tracking-wide text-black"
                     style={{
@@ -25,13 +24,13 @@ const ContactSection = () => {
                 <br />
                 <div className="flex space-x-4 items-center justify-center">
                     <a href="https://wa.me/554792566795" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faWhatsapp} size="2x" style={{ color: '#25D366' }} />
+                        <FontAwesomeIcon icon={faWhatsapp}  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"  style={{ color: '#00FF00' }} />
                     </a>
                     <a href="https://www.instagram.com/b2frotasoficial" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faInstagram} size="2x" style={{ color: '#E1306C' }} />
-                    </a>
+                        <FontAwesomeIcon icon={faInstagram} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"  style={{ color: '#FF007F' }} />
+                    </a>-
                     <a href="https://www.facebook.com/seu-perfil-facebook" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faFacebook} size="2x" style={{ color: '#4267B2' }} />
+                        <FontAwesomeIcon icon={faFacebook} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"  style={{ color: 'blue' }} />
                     </a>
                     {/* <a href="https://www.linkedin.com/in/seu-perfil-linkedin" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ color: '#0e76a8' }} />
@@ -39,8 +38,8 @@ const ContactSection = () => {
                 </div>
                 <div className="sm:grid sm:grid-cols-1 md:grid-cols-2 sm:gap-8">
                     <div className="mt-1 mb-4">
-                        <h2 className="text-2xl font-semibold text-center mb-4 sm:mt-5">Entre em contato</h2>
-                        <p className="text-lg">
+                        <h2 className="text-2xl font-semibold text-center mb-4 sm:mt-4">Entre em contato</h2>
+                        <div className="text-lg font-semibold">
                             <strong className="text-black">Email:</strong>
                             <br />
                             <a href="mailto:brunocdesena@gmail.com" className="text-black">
@@ -52,8 +51,8 @@ const ContactSection = () => {
                                 <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
                                 brunocdesenadesenvolvedor@gmail.com
                             </a>
-                        </p>
-                        <p className="text-lg mt-4">
+                        </div>
+                        <p className="text-lg mt-4 font-semibold">
                             <strong className="text-black">Telefone:</strong>
                             <br />
                             <a href="tel:+5547992566795" className="text-black">
@@ -76,16 +75,6 @@ const ContactSection = () => {
                         <Contact />
                     </div>
                 </div>
-                <p className="text-lg mt-4">
-                    <strong className="text-black">Localização:</strong>
-                    <iframe
-                        src="https://maps.google.com.br/maps?q=B2+Frotas+-+Personalização+de+Frotas&output=embed"
-                        allowFullScreen
-                        loading="lazy"
-                        className='w-full mt-5'
-                        height={300}
-                    ></iframe>
-                </p>
             </div>
         </section>
     )
