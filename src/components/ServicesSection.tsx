@@ -1,27 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaPaintBrush, FaTruck, FaSnowflake } from 'react-icons/fa';
 
+const services = [
+    {
+        id: 1,
+        icon: <FaPaintBrush className="text-white text-2xl" />,
+        title: 'Pintura de Baús – Todos os Tipos e Tamanhos',
+        imageUrl: '/bau-todostipos.jpg',
+    },
+    {
+        id: 2,
+        icon: <FaTruck className="text-white text-2xl" />,
+        title: 'Pintura de Baús Sider',
+        imageUrl: '/bau-sider.jpg',
+    },
+    {
+        id: 3,
+        icon: <FaSnowflake className="text-white text-2xl" />,
+        title: 'Pintura de Câmaras Frigoríficas',
+        imageUrl: '/frigorifico.jpg',
+    },
+];
+
 const ServicesSection = () => {
-    const services = [
-        {
-            id: 1,
-            icon: <FaPaintBrush className="text-white text-2xl" />,
-            title: 'Pintura de Baús – Todos os Tipos e Tamanhos',
-            description: 'Somos especialistas na pintura de baús para diversos tipos de veículos e segmentos, garantindo um acabamento impecável e durável. Trabalhamos com baús de todos os tamanhos e proporcionamos máxima proteção e estética, valorizando a identidade visual do cliente.',
-        },
-        {
-            id: 2,
-            icon: <FaTruck className="text-white text-2xl" />,
-            title: 'Pintura de Baús Sider',
-            description: `Nosso serviço de pintura de baús sider é desenvolvido com técnicas precisas e materiais de alta resistência, preservando a flexibilidade do sider e mantendo a durabilidade mesmo com o desgaste natural do uso diário.`,
-        },
-        {
-            id: 3,
-            icon: <FaSnowflake className="text-white text-2xl" />,
-            title: 'Pintura de Câmaras Frigoríficas',
-            description: 'Na personalização de câmaras frigoríficas, aplicamos tintas e revestimentos específicos para garantir a integridade térmica e a resistência a condições severas de temperatura e umidade, sem comprometer o desempenho do equipamento.',
-        },
-    ];
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [currentImage, setCurrentImage] = useState<string>();
+
+    const openModal = (imageUrl: string) => {
+        setCurrentImage(imageUrl);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setCurrentImage('');
+    };
 
     return (
         <section id="services" className="py-8 px-4 text-center">
@@ -41,11 +54,40 @@ const ServicesSection = () => {
                         className="text-white rounded-xl p-6 flex flex-col items-center transform transition-transform duration-200 hover:scale-105"
                     >
                         <div className="mb-4">{service.icon}</div>
-                        <h3 className="font-montserrat font-bold text-xl mb-2">{service.title}</h3>
-                        <p className="font-roboto text-md text-center">{service.description}</p>
+                        <h3 className="font-montserrat font-bold text-xl mb-2" style={{ minHeight: '3em' }}>
+                            {service.title}
+                        </h3>
+                        <img
+                            src={service.imageUrl}
+                            alt={service.title}
+                            className="w-full h-40 object-cover rounded-xl cursor-pointer"
+                            onClick={() => openModal(service.imageUrl)}
+                        />
                     </div>
                 ))}
             </div>
+            {isModalOpen && (
+                <div
+                    className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
+                    onClick={closeModal}
+                >
+                    <div className="relative">
+                        <img
+                            src={currentImage}
+                            alt="Imagem do serviço"
+                            width={800}
+                            height={500}
+                            className="object-cover rounded-xl"
+                        />
+                        <button
+                            onClick={closeModal}
+                            className="absolute top-2 right-2 bg-white text-black rounded-full w-8 h-8 flex items-center justify-center"
+                        >
+                            &times;
+                        </button>
+                    </div>
+                </div>
+            )}
         </section>
     );
 };

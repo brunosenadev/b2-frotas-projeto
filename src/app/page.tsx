@@ -5,7 +5,8 @@ import AboutUsSection from "@/components/AboutUsSection";
 import ContactSection from '@/components/ContactSection';
 import ServicesSection from '@/components/ServicesSection';
 import PortfolioSection from '@/components/PortfolioSection';
-import Map from '@/components/Map'
+import Map from '@/components/Map';
+import Footer from '@/components/Footer';
 
 export default function Home() {
     return (
@@ -13,10 +14,10 @@ export default function Home() {
             <Navbar />
             <HomeSection />
             <div className="px-4 sm:px-12 lg:px-24 xl:px-[350px] bg-gray-100">
-                <AboutUsSection />
+                <ServicesSection />
             </div>
             <div className="px-4 sm:px-12 lg:px-24 xl:px-[350px] bg-gray-200">
-                <ServicesSection />
+                <AboutUsSection />
             </div>
             <div className="px-4 sm:px-12 lg:px-24 xl:px-[350px] bg-gray-300">
                 <PortfolioSection />
@@ -25,6 +26,7 @@ export default function Home() {
                 <ContactSection />
             </div>
             <Map />
+            <Footer/>
         </div>
     );
 }
