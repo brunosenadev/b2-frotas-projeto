@@ -63,7 +63,7 @@ const Navbar = memo(() => {
                 </div>
                 <div className="hidden space-x-4 md:flex mt-6">
                     <NavigationMenuItem
-                        className="text-white mx-1 text-lg font-semibold list-none"
+                        className="text-white mx-1 text-lg font-semibold list-none hover:cursor-pointer"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('home');
@@ -73,7 +73,7 @@ const Navbar = memo(() => {
                         HOME
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-lg font-semibold list-none"
+                        className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('about');
@@ -83,7 +83,7 @@ const Navbar = memo(() => {
                         SOBRE NÓS
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-lg font-semibold list-none"
+                        className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('services');
@@ -93,7 +93,7 @@ const Navbar = memo(() => {
                         SERVIÇOS
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-lg font-semibold list-none"
+                        className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('portfolio');
@@ -103,7 +103,7 @@ const Navbar = memo(() => {
                         PORTFÓLIO
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-lg font-semibold list-none"
+                        className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('contact');

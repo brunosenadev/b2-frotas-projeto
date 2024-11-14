@@ -1,25 +1,33 @@
 import React, { useState } from 'react';
-import { FaPaintBrush, FaTruck, FaSnowflake } from 'react-icons/fa';
+import Image from 'next/image';
 
 const services = [
     {
         id: 1,
-        icon: <FaPaintBrush className="text-white text-2xl" />,
-        title: 'Pintura de Baús – Todos os Tipos e Tamanhos',
+        title: 'PINTURA FUNDO E LETREIRO',
         imageUrl: '/bau-todostipos.jpg',
     },
     {
         id: 2,
-        icon: <FaTruck className="text-white text-2xl" />,
-        title: 'Pintura de Baús Sider',
+        title: 'PINTURA LETREIRO E CHAPA METÁLICA',
         imageUrl: '/bau-sider.jpg',
     },
     {
         id: 3,
-        icon: <FaSnowflake className="text-white text-2xl" />,
-        title: 'Pintura de Câmaras Frigoríficas',
+        title: 'PINTURA LETREIRO BAÚ FRIGORÍFICO',
         imageUrl: '/frigorifico.jpg',
     },
+    {
+        id: 4,
+        title: 'PINTURA LETREIRO SIDER(LONADO)',
+        imageUrl: '/frigorifico.jpg',
+    },
+    {
+        id: 5,
+        title: 'ADESIVAÇÃO',
+        imageUrl: '/frigorifico.jpg',
+    },
+
 ];
 
 const ServicesSection = () => {
@@ -37,30 +45,29 @@ const ServicesSection = () => {
     };
 
     return (
-        <section id="services" className="py-8 px-4 text-center">
-            <h2
+        <section id="services" className="py-8 px-4 text-center pt-0">
+            {/* <h2
                 className="text-2xl font-semibold tracking-wide text-black"
                 style={{
                     fontFamily: 'Montserrat, sans-serif',
                 }}
             >
                 NOSSOS SERVIÇOS
-            </h2>
-            <div className="grid mt-5 gap-6 md:grid-cols-2 lg:grid-cols-3">
+            </h2> */}
+            <div className="grid grid-col-2 mt-5 gap-6 md:grid-cols-3 lg:grid-cols-5">
                 {services.map((service) => (
                     <div
                         key={service.id}
                         style={{ background: 'rgba(41,52,74,255)' }}
-                        className="text-white rounded-xl p-6 flex flex-col items-center transform transition-transform duration-200 hover:scale-105"
+                        className="text-white rounded-2xl p-6 flex flex-col items-center transform transition-transform duration-200 hover:scale-105"
                     >
-                        <div className="mb-4">{service.icon}</div>
-                        <h3 className="font-montserrat font-bold text-xl mb-2" style={{ minHeight: '3em' }}>
+                        <h3 className="font-semibold text-lg mb-2" style={{ minHeight: '3em', fontFamily: 'Montserrat, sans-serif' }}>
                             {service.title}
                         </h3>
-                        <img
+                        <Image
                             src={service.imageUrl}
                             alt={service.title}
-                            className="w-full h-40 object-cover rounded-xl cursor-pointer"
+                            className="w-full h-40 object-cover rounded-2xl cursor-pointer"
                             onClick={() => openModal(service.imageUrl)}
                         />
                     </div>

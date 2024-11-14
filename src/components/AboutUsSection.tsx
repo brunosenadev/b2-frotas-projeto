@@ -5,15 +5,21 @@ const AboutSection = () => {
     return (
         <section
             id="about"
-            className="relative items-center justify-center mt-10 bg-gray-200 pt-6 pb-6 overflow-hidden"
+            className="relative items-center justify-center mt-10 pt-6 pb-20 overflow-hidden"
         >
-            <div className="relative z-10 text-center mt-1">
+            {/* <div className="relative z-10 text-center mt-1">
                 <h2
                     className="text-2xl font-semibold tracking-wide text-black"
                     style={{
                         fontFamily: 'Montserrat, sans-serif',
                     }}
                 >
+                    SOBRE NÓS
+                </h2>
+            </div> */}
+            <div className="flex justify-center items-center mb-5">
+                <div className="w-1 h-10 bg-red-500 mr-4"></div>
+                <h2 className="text-2xl font-semibold tracking-wide text-black" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                     SOBRE NÓS
                 </h2>
             </div>
@@ -25,7 +31,7 @@ const AboutSection = () => {
                         color: 'rgba(41,52,74,255)'
                     }}
                 >
-                    
+
                     Há mais de 30 anos no mercado, a <strong style={{ color: '#c11f10' }}>B2 Frotas</strong> se destaca como uma referência em qualidade e expertise na <strong style={{ color: '#c11f10' }}>pintura e adesivação de baús.</strong> Nosso compromisso com a excelência e a inovação nos coloca na vanguarda do setor, oferecendo soluções personalizadas que atendem às necessidades específicas de cada cliente.
                     Especialistas na pintura de baús de caminhões, oferecemos soluções sob medida para empresas que buscam destacar sua marca nas estradas e fortalecer sua presença no mercado. Com uma equipe experiente e comprometida, garantimos excelência em cada detalhe, desde a escolha dos materiais até a execução final.
                 </p>
