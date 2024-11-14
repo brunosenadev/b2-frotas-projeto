@@ -10,19 +10,19 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
     return (
-        <div className="overflow-x-hidden w-full min-h-screen bg-gray-100">
+        <div className="overflow-x-hidden w-full min-h-screen">
             <Navbar />
             <HomeSection />
-            <div className="px-4 sm:px-12 lg:px-24 xl:px-[350px] bg-gray-100">
+            <div className="px-4 sm:px-12 lg:px-24 xl:px-20 mt-[-60px]">
                 <ServicesSection />
             </div>
-            <div className="px-4 sm:px-12 lg:px-24 xl:px-[350px] bg-gray-200">
+            <div className="px-4 sm:px-12 lg:px-24 xl:px-[350px] bg-white">
                 <AboutUsSection />
             </div>
-            <div className="px-4 sm:px-12 lg:px-24 xl:px-[350px] bg-gray-300">
+            <div className="px-4 sm:px-12 lg:px-24 xl:px-20 bg-white" style={{ background: 'rgba(41,52,74,255)' }}>
                 <PortfolioSection />
             </div>
-            <div className="px-4 sm:px-12 lg:px-24 xl:px-[350px] bg-gray-400 pt-5">
+            <div className="px-4 sm:px-12 lg:px-24 xl:px-[350px] bg-gray-200 pt-5">
                 <ContactSection />
             </div>
             <Map />

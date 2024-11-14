@@ -8,29 +8,28 @@ const ContactSection = () => {
     return (
         <section
             id='contact'
+            className='pb-20 mt-10'
         >
             <div className="relative z-10 text-center">
-                <h2
-                    className="text-2xl font-semibold tracking-wide text-black"
-                    style={{
-                        fontFamily: 'Montserrat, sans-serif',
-                    }}
-                >
-                    CONTATO
-                </h2>
+                <div className="flex justify-center items-center mb-5">
+                    <div className="w-1 h-10 bg-red-500 mr-4"></div>
+                    <h2 className="text-2xl font-semibold tracking-wide text-black" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                        CONTATO
+                    </h2>
+                </div>
                 <p className="font-semibold text-lg mt-2 text-center">
                     Entre em contato com a nossa equipe e vamos juntos transformar a identidade da sua empresa!
                 </p>
                 <br />
                 <div className="flex space-x-4 items-center justify-center">
                     <a href="https://wa.me/554792566795" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faWhatsapp}  className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"  style={{ color: '#00FF00' }} />
+                        <FontAwesomeIcon icon={faWhatsapp} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" style={{ color: '#25D366' }} />
                     </a>
                     <a href="https://www.instagram.com/b2frotasoficial" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faInstagram} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"  style={{ color: '#FF007F' }} />
+                        <FontAwesomeIcon icon={faInstagram} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" style={{ color: '#FF007F' }} />
                     </a>
                     <a href="https://www.facebook.com/seu-perfil-facebook" target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faFacebook} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"  style={{ color: 'blue' }} />
+                        <FontAwesomeIcon icon={faFacebook} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" style={{ color: 'blue' }} />
                     </a>
                     {/* <a href="https://www.linkedin.com/in/seu-perfil-linkedin" target="_blank" rel="noopener noreferrer">
                     <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ color: '#0e76a8' }} />
