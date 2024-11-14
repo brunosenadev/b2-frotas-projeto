@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaPaintBrush, FaTruck, FaSnowflake } from 'react-icons/fa';
+import Image from 'next/image';
 
 const services = [
     {
@@ -64,7 +64,7 @@ const ServicesSection = () => {
                         <h3 className="font-semibold text-lg mb-2" style={{ minHeight: '3em', fontFamily: 'Montserrat, sans-serif' }}>
                             {service.title}
                         </h3>
-                        <img
+                        <Image
                             src={service.imageUrl}
                             alt={service.title}
                             className="w-full h-40 object-cover rounded-2xl cursor-pointer"
