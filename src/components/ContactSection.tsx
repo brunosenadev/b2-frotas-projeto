@@ -17,7 +17,7 @@ const ContactSection = () => {
                         CONTATO
                     </h2>
                 </div>
-                <p className="font-semibold text-lg mt-2 text-center">
+                <p className="font-semibold text-lg md:text-2xl mt-2 text-center">
                     Entre em contato com a nossa equipe e vamos juntos transformar a identidade da sua empresa!
                 </p>
                 <br />

@@ -7,8 +7,8 @@ const empresas = [
         nome: "Empresa A",
         imagens: [
             "/bv.webp",
-            "/bv.webp",
-            "/bv.webp",
+            "/caminhao.webp",
+            "/bv2.jpg",
         ],
     },
     {
