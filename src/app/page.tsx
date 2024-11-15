@@ -13,7 +13,7 @@ export default function Home() {
         <div className="overflow-x-hidden w-full min-h-screen">
             <Navbar />
             <HomeSection />
-            <div className="px-4 sm:px-12 lg:px-24 xl:px-20 mt-[-60px]">
+            <div className="px-4 sm:px-12 lg:px-24 xl:px-20 md:mt-[-60px] mt-[-40]">
                 <ServicesSection />
             </div>
             <div className="px-4 sm:px-12 lg:px-24 xl:px-[350px] bg-white">

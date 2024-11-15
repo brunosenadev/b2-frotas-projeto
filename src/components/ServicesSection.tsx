@@ -5,27 +5,27 @@ const services = [
     {
         id: 1,
         title: 'PINTURA FUNDO E LETREIRO',
-        imageUrl: '/bau-todostipos.jpg',
+        imageUrl: '/servicos/frente-letreiro.webp',
     },
     {
         id: 2,
         title: 'PINTURA LETREIRO E CHAPA METÁLICA',
-        imageUrl: '/bau-sider.jpg',
+        imageUrl: '/servicos/gazin.webp',
     },
     {
         id: 3,
         title: 'PINTURA LETREIRO BAÚ FRIGORÍFICO',
-        imageUrl: '/frigorifico.jpg',
+        imageUrl: '/servicos/lucelmar-frigorifico.webp',
     },
     {
         id: 4,
         title: 'PINTURA LETREIRO SIDER(LONADO)',
-        imageUrl: '/frigorifico.jpg',
+        imageUrl: '/servicos/sider.webp',
     },
     {
         id: 5,
         title: 'ADESIVAÇÃO',
-        imageUrl: '/frigorifico.jpg',
+        imageUrl: '/servicos/adesivacao.webp',
     },
 
 ];
@@ -67,8 +67,13 @@ const ServicesSection = () => {
                         <Image
                             src={service.imageUrl}
                             alt={service.title}
-                            className="w-full h-40 object-cover rounded-2xl cursor-pointer"
+                            className="w-full h-40 rounded-2xl cursor-pointer"
                             onClick={() => openModal(service.imageUrl)}
+                            width={500}
+                            height={300}
+                            objectFit="cover"
+                            quality={90}
+                            priority
                         />
                     </div>
                 ))}

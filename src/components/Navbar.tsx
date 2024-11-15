@@ -33,13 +33,13 @@ const Navbar = memo(() => {
                     <FontAwesomeIcon icon={faWhatsapp} className="mr-2 text-lg align-middle font-semibold" style={{ color: 'white' }} />
                     (47) 9999-9999
                 </a>
-                <a href="tel:+5547992566795" className='text-white font-semibold mr-4'>
+                <a href="tel:+554733085589" className='text-white font-semibold mr-4'>
                     <FontAwesomeIcon icon={faPhone} className="mr-2 align-middle" />
-                    (47) 91234-5678
+                    (47) 3308-5589
                 </a>
-                <a href="mailto:teste@gmail.com" className="text-white font-semibold">
+                <a href="mailto:empresab2frotas@gmail.com" className="text-white font-semibold">
                     <FontAwesomeIcon icon={faEnvelope} className="mr-2 align-middle" />
-                    teste@gmail.com
+                    empresab2frotas@gmail.com
                 </a>
             </div>
             <NavigationMenu
@@ -76,21 +76,21 @@ const Navbar = memo(() => {
                         className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
-                            handleScroll('about');
-                            setIsOpen(false);
-                        }}
-                    >
-                        SOBRE NÓS
-                    </NavigationMenuItem>
-                    <NavigationMenuItem
-                        className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
-                        style={{ fontFamily: 'Montserrat, sans-serif' }}
-                        onClick={() => {
                             handleScroll('services');
                             setIsOpen(false);
                         }}
                     >
                         SERVIÇOS
+                    </NavigationMenuItem>
+                    <NavigationMenuItem
+                        className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
+                        style={{ fontFamily: 'Montserrat, sans-serif' }}
+                        onClick={() => {
+                            handleScroll('about');
+                            setIsOpen(false);
+                        }}
+                    >
+                        SOBRE NÓS
                     </NavigationMenuItem>
                     <NavigationMenuItem
                         className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
@@ -135,6 +135,20 @@ const Navbar = memo(() => {
                     <NavigationMenuItem
                         className="py-2 hover:bg-gray-700 w-full list-none"
                         onClick={() => {
+                            handleScroll('services');
+                            setIsOpen(false);
+                        }}
+                        style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    >
+                        <span
+                            className='ml-4'
+                        >
+                            SERVIÇOS
+                        </span>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem
+                        className="py-2 hover:bg-gray-700 w-full list-none"
+                        onClick={() => {
                             handleScroll('home');
                             setIsOpen(false);
                         }}
@@ -158,20 +172,6 @@ const Navbar = memo(() => {
                             className='ml-4'
                         >
                             SOBRE NÓS
-                        </span>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem
-                        className="py-2 hover:bg-gray-700 w-full list-none"
-                        onClick={() => {
-                            handleScroll('services');
-                            setIsOpen(false);
-                        }}
-                        style={{ fontFamily: 'Montserrat, sans-serif' }}
-                    >
-                        <span
-                            className='ml-4'
-                        >
-                            SERVIÇOS
                         </span>
                     </NavigationMenuItem>
                     <NavigationMenuItem

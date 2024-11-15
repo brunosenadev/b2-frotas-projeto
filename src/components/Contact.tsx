@@ -11,15 +11,18 @@ const ContactForm = () => {
 
     if (form.current) {
       emailjs.sendForm(
-        'YOUR_SERVICE_ID',
-        'YOUR_TEMPLATE_ID',
+        'service_bi288cs',
+        'template_mer7d9i',
         form.current,
-        'YOUR_USER_ID'
+        'SmBxififM0NfLk_-h',
       ).then(
         (result) => {
           setIsSubmitted(true);
           setIsError(false);
           console.log('Email enviado com sucesso:', result.text);
+          if (form.current != null) {
+            form.current.reset();
+          }
         },
         (error) => {
           setIsError(true);
@@ -46,7 +49,7 @@ const ContactForm = () => {
         </label>
         <input
           type="text"
-          name="name"
+          name="from_name"
           placeholder="Nome"
           className="w-full p-2 border border-gray-300 rounded-lg mt-2 text-black"
           required
@@ -60,7 +63,7 @@ const ContactForm = () => {
         </label>
         <input
           type="tel"
-          name="phone"
+          name="from_phone"
           placeholder="(47) 91234-5678"
           pattern="\(\d{2}\) \d{4,5}-\d{4}"
           required
@@ -75,7 +78,7 @@ const ContactForm = () => {
         </label>
         <input
           type="email"
-          name="email"
+          name="from_email"
           placeholder="E-mail"
           className="w-full p-2 border border-gray-300 rounded-md mt-2 text-black"
           required
