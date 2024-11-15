@@ -32,7 +32,7 @@ const services = [
 
 const ServicesSection = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [currentImage, setCurrentImage] = useState<string>();
+    const [currentImage, setCurrentImage] = useState<string>('');
 
     const openModal = (imageUrl: string) => {
         setCurrentImage(imageUrl);
@@ -84,7 +84,7 @@ const ServicesSection = () => {
                     onClick={closeModal}
                 >
                     <div className="relative">
-                        <img
+                        <Image
                             src={currentImage}
                             alt="Imagem do serviço"
                             width={800}
