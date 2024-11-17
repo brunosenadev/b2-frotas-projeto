@@ -7,16 +7,6 @@ const AboutSection = () => {
             id="about"
             className="relative items-center justify-center mt-10 pt-6 pb-20 overflow-hidden"
         >
-            {/* <div className="relative z-10 text-center mt-1">
-                <h2
-                    className="text-2xl font-semibold tracking-wide text-black"
-                    style={{
-                        fontFamily: 'Montserrat, sans-serif',
-                    }}
-                >
-                    SOBRE NÓS
-                </h2>
-            </div> */}
             <div className="flex justify-center items-center mb-5">
                 <div className="w-1 h-10 bg-red-500 mr-4"></div>
                 <h2 className="text-2xl font-semibold tracking-wide text-black" style={{ fontFamily: 'Montserrat, sans-serif' }}>

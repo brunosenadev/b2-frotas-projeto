@@ -31,9 +31,6 @@ const ContactSection = () => {
                     <a href="https://www.facebook.com/seu-perfil-facebook" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faFacebook} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" style={{ color: 'blue' }} />
                     </a>
-                    {/* <a href="https://www.linkedin.com/in/seu-perfil-linkedin" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ color: '#0e76a8' }} />
-                  </a> */}
                 </div>
                 <div className="sm:grid sm:grid-cols-1 md:grid-cols-2 sm:gap-8">
                     <div className="mt-1 mb-4">

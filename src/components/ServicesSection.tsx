@@ -46,14 +46,6 @@ const ServicesSection = () => {
 
     return (
         <section id="services" className="py-8 px-4 text-center pt-0">
-            {/* <h2
-                className="text-2xl font-semibold tracking-wide text-black"
-                style={{
-                    fontFamily: 'Montserrat, sans-serif',
-                }}
-            >
-                NOSSOS SERVIÇOS
-            </h2> */}
             <div className="grid grid-col-2 mt-5 gap-6 md:grid-cols-3 lg:grid-cols-5">
                 {services.map((service) => (
                     <div

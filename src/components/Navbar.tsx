@@ -76,16 +76,6 @@ const Navbar = memo(() => {
                         className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
-                            handleScroll('services');
-                            setIsOpen(false);
-                        }}
-                    >
-                        SERVIÇOS
-                    </NavigationMenuItem>
-                    <NavigationMenuItem
-                        className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
-                        style={{ fontFamily: 'Montserrat, sans-serif' }}
-                        onClick={() => {
                             handleScroll('about');
                             setIsOpen(false);
                         }}
@@ -131,20 +121,6 @@ const Navbar = memo(() => {
                     <NavigationMenuItem
                         className="py-2 hover:bg-gray-700 w-full list-none mt-10 pb-0"
                     >
-                    </NavigationMenuItem>
-                    <NavigationMenuItem
-                        className="py-2 hover:bg-gray-700 w-full list-none"
-                        onClick={() => {
-                            handleScroll('services');
-                            setIsOpen(false);
-                        }}
-                        style={{ fontFamily: 'Montserrat, sans-serif' }}
-                    >
-                        <span
-                            className='ml-4'
-                        >
-                            SERVIÇOS
-                        </span>
                     </NavigationMenuItem>
                     <NavigationMenuItem
                         className="py-2 hover:bg-gray-700 w-full list-none"

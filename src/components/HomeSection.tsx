@@ -13,9 +13,6 @@ const HomeSection = () => {
                 priority
                 rel='preload'
             />
-            {/* <p className="mt-2 text-lg sm:text-2xl font-semibold italic text-center text-black max-w-lg mx-auto sm:max-w-2xl md:max-w-4xl">
-                Transformando frotas em ícones de identidade e qualidade nas estradas!
-            </p> */}
         </section>
     );
 };
