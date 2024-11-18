@@ -22,7 +22,7 @@ const ContactSection = () => {
                 </p>
                 <br />
                 <div className="flex space-x-4 items-center justify-center">
-                    <a href="https://wa.me/554792566795" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/5547880866082" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faWhatsapp} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" style={{ color: '#25D366' }} />
                     </a>
                     <a href="https://www.instagram.com/b2frotasoficial" target="_blank" rel="noopener noreferrer">
@@ -31,9 +31,6 @@ const ContactSection = () => {
                     <a href="https://www.facebook.com/seu-perfil-facebook" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faFacebook} className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" style={{ color: 'blue' }} />
                     </a>
-                    {/* <a href="https://www.linkedin.com/in/seu-perfil-linkedin" target="_blank" rel="noopener noreferrer">
-                    <FontAwesomeIcon icon={faLinkedin} size="2x" style={{ color: '#0e76a8' }} />
-                  </a> */}
                 </div>
                 <div className="sm:grid sm:grid-cols-1 md:grid-cols-2 sm:gap-8">
                     <div className="mt-1 mb-4">
@@ -41,24 +38,24 @@ const ContactSection = () => {
                         <div className="text-lg font-semibold">
                             <strong className="text-black">Email:</strong>
                             <br />
-                            <a href="mailto:brunocdesena@gmail.com" className="text-black">
+                            <a href="mailto:empresab2frotas@gmail.com" className="text-black">
                                 <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-                                brunocdesena@gmail.com
+                                empresab2frotas@gmail.com
                             </a>
                             <br />
-                            <a href="mailto:brunocdesenadesenvolvedor@gmail.com" className="text-black">
+                            <a href="mailto:frotas@benke.com.br" className="text-black">
                                 <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-                                brunocdesenadesenvolvedor@gmail.com
+                                frotas@benke.com.br
                             </a>
                         </div>
                         <p className="text-lg mt-4 font-semibold">
                             <strong className="text-black">Telefone:</strong>
                             <br />
-                            <a href="tel:+5547992566795" className="text-black">
+                            <a href="tel:+554733085589" className="text-black">
                                 <FontAwesomeIcon icon={faPhone} className="mr-2" />
-                                (47) 99256-6795
+                                (47) 3308-5589
                             </a>
-                            <br />
+                            {/* <br />
                             <a href="tel:+5547991703964" className="text-black">
                                 <FontAwesomeIcon icon={faPhone} className="mr-2" />
                                 (47) 99170-3964
@@ -67,7 +64,7 @@ const ContactSection = () => {
                             <a href="tel:+5547997511418" className="text-black">
                                 <FontAwesomeIcon icon={faPhone} className="mr-2" />
                                 (47) 99751-1418
-                            </a>
+                            </a> */}
                         </p>
                     </div>
                     <div className="sm:pr-4">

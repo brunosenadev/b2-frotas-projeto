@@ -15,6 +15,9 @@ export default function Home() {
             <HomeSection />
             <div className="px-4 sm:px-12 lg:px-24 xl:px-20 md:mt-[-60px] mt-[-40]">
                 <ServicesSection />
+                <p className="mt-2 text-lg sm:text-2xl font-semibold italic text-center text-black max-w-lg mx-auto sm:max-w-2xl md:max-w-4xl">
+                    Transformando frotas em ícones de identidade e qualidade nas estradas!
+                </p>    
             </div>
             <div className="px-4 sm:px-12 lg:px-24 xl:px-[350px] bg-white">
                 <AboutUsSection />
@@ -26,7 +29,7 @@ export default function Home() {
                 <ContactSection />
             </div>
             <Map />
-            <Footer/>
+            <Footer />
         </div>
     );
 }

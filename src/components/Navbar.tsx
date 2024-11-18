@@ -29,9 +29,9 @@ const Navbar = memo(() => {
                 className="min-w-full w-full min-h-[30px] flex items-center justify-end px-4 sm:px-12 lg:px-16 xl:px-[350px] hidden md:flex"
                 style={{ background: 'rgba(41,52,74,255)' }}
             >
-                <a href="https://wa.me/554792566795" target="_blank" rel="noopener noreferrer" className='text-white font-semibold mr-4'>
+                <a href="https://wa.me/554788086608" target="_blank" rel="noopener noreferrer" className='text-white font-semibold mr-4'>
                     <FontAwesomeIcon icon={faWhatsapp} className="mr-2 text-lg align-middle font-semibold" style={{ color: 'white' }} />
-                    (47) 9999-9999
+                    (47) 8808-6608
                 </a>
                 <a href="tel:+554733085589" className='text-white font-semibold mr-4'>
                     <FontAwesomeIcon icon={faPhone} className="mr-2 align-middle" />
@@ -71,16 +71,6 @@ const Navbar = memo(() => {
                         }}
                     >
                         HOME
-                    </NavigationMenuItem>
-                    <NavigationMenuItem
-                        className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
-                        style={{ fontFamily: 'Montserrat, sans-serif' }}
-                        onClick={() => {
-                            handleScroll('services');
-                            setIsOpen(false);
-                        }}
-                    >
-                        SERVIÇOS
                     </NavigationMenuItem>
                     <NavigationMenuItem
                         className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
@@ -131,20 +121,6 @@ const Navbar = memo(() => {
                     <NavigationMenuItem
                         className="py-2 hover:bg-gray-700 w-full list-none mt-10 pb-0"
                     >
-                    </NavigationMenuItem>
-                    <NavigationMenuItem
-                        className="py-2 hover:bg-gray-700 w-full list-none"
-                        onClick={() => {
-                            handleScroll('services');
-                            setIsOpen(false);
-                        }}
-                        style={{ fontFamily: 'Montserrat, sans-serif' }}
-                    >
-                        <span
-                            className='ml-4'
-                        >
-                            SERVIÇOS
-                        </span>
                     </NavigationMenuItem>
                     <NavigationMenuItem
                         className="py-2 hover:bg-gray-700 w-full list-none"

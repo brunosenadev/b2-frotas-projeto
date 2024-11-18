@@ -62,9 +62,9 @@ const Footer = () => {
                         <h4 className="text-white font-bold mb-3 font-montserrat">CONTATOS</h4>
                         <ul className="space-y-2">
                             <li>
-                                <Link href="tel:+554799" className="hover:text-white transition-colors">
+                                <Link href="tel:+554733085589" className="hover:text-white transition-colors">
                                     <FontAwesomeIcon icon={faPhone} className="mr-2 align-middle" />
-                                    (47) 99999-9999
+                                    (47) 3308-5589
                                 </Link>
                             </li>
                             <li>
@@ -93,13 +93,13 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="https://instagram.com" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                                <Link href="https://www.instagram.com/b2frotasoficial" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                                     <FontAwesomeIcon icon={faInstagram} className="text-lg mr-1" style={{ color: 'white' }} />
                                     INSTAGRAM
                                 </Link>
                             </li>
                             <li>
-                                <Link href="https://linkedin.com" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                                <Link href="https://wa.me/5547880866082" className="hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
                                     <FontAwesomeIcon icon={faWhatsapp} className="text-lg mr-1" style={{ color: 'white' }} />
                                     WHASTAPP
                                 </Link>

@@ -1,171 +1,182 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+interface Empresa {
+  nome: string;
+  imagens: string[];
+}
+
 const empresas = [
-    {
-        nome: "Empresa A",
-        imagens: [
-            "/bv.webp",
-            "/caminhao.webp",
-            "/bv2.jpg",
-        ],
-    },
-    {
-        nome: "Empresa B",
-        imagens: [
-            "/bv.webp",
-            "/bv.webp",
-            "/bv.webp",
-        ],
-    },
-    {
-        nome: "Empresa C",
-        imagens: [
-            "/bv.webp",
-            "/bv.webp",
-            "/bv.webp",
-        ],
-    },
-    {
-        nome: "Empresa D",
-        imagens: [
-            "/bv.webp",
-            "/bv.webp",
-            "/bv.webp",
-        ],
-    },
-    {
-        nome: "Empresa E",
-        imagens: [
-            "/bv.webp",
-            "/bv.webp",
-            "/bv.webp",
-        ],
-    },
+  {
+    nome: "Empresa A",
+    imagens: ["/bv.webp", "/caminhao.webp", "/bv2.jpg"],
+  },
+  {
+    nome: "Empresa B",
+    imagens: ["/bv.webp", "/bv.webp", "/bv.webp"],
+  },
+  {
+    nome: "Empresa C",
+    imagens: ["/bv.webp", "/bv.webp", "/bv.webp"],
+  },
+  {
+    nome: "Empresa D",
+    imagens: ["/bv.webp", "/bv.webp", "/bv.webp"],
+  },
+  {
+    nome: "Empresa E",
+    imagens: ["/bv.webp", "/bv.webp", "/bv.webp"],
+  },
+  {
+    nome: "Empresa F",
+    imagens: ["/bv.webp", "/bv.webp", "/bv.webp"],
+  },
+  {
+    nome: "Empresa G",
+    imagens: ["/bv.webp", "/bv.webp", "/bv.webp"],
+  },
 ];
 
-const PortfolioSection = () => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [currentEmpresa, setCurrentEmpresa] = useState(empresas[0]);
-    const [imageIndex, setImageIndex] = useState(0);
+const PortfolioCarousel = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentEmpresa, setCurrentEmpresa] = useState(empresas[0]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    const openModal = (empresaIndex: number) => {
-        setCurrentEmpresa(empresas[empresaIndex]);
-        setImageIndex(0);
-        setIsModalOpen(true);
-    };
+  const openModal = (empresa: Empresa, imageIndex: number) => {
+    setCurrentEmpresa(empresa);
+    setCurrentImageIndex(imageIndex);
+    setIsModalOpen(true);
+  };
 
-    const closeModal = () => {
-        setIsModalOpen(false);
-        setCurrentEmpresa(empresas[0]);
-    };
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentEmpresa(empresas[0]);
+    setCurrentImageIndex(0);
+  };
 
-    const handlePrevImage = () => {
-        setImageIndex((prevIndex) =>
-            prevIndex === 0 ? currentEmpresa.imagens.length - 1 : prevIndex - 1
-        );
-    };
+  const handlePrevImage = () => {
+    if (currentEmpresa) {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === 0 ? currentEmpresa.imagens.length - 1 : prevIndex - 1
+      );
+    }
+  };
 
-    const handleNextImage = () => {
-        setImageIndex((prevIndex) =>
-            prevIndex === currentEmpresa.imagens.length - 1 ? 0 : prevIndex + 1
-        );
-    };
+  const handleNextImage = () => {
+    if (currentEmpresa) {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === currentEmpresa.imagens.length - 1 ? 0 : prevIndex + 1
+      );
+    }
+  };
 
-    return (
-        <section id="portfolio" className="py-8 px-4 text-center">
-            <div className="flex justify-center items-center mb-5">
-                <div className="w-1 h-10 bg-red-500 mr-4"></div>
-                <h2 className="text-2xl font-semibold tracking-wide text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                    NOSSO PORTFÓLIO
-                </h2>
+  return (
+    <section id="portfolio" className="py-8 px-4 text-center">
+      <div className="flex justify-center items-center mb-5">
+        <div className="w-1 h-10 bg-red-500 mr-4"></div>
+        <h2
+          className="text-2xl font-semibold tracking-wide text-white"
+          style={{ fontFamily: 'Montserrat, sans-serif' }}
+        >
+          NOSSO PORTFÓLIO
+        </h2>
+      </div>
+
+      <Swiper
+        modules={[Navigation, Autoplay]}
+        spaceBetween={20}
+        slidesPerView={4}
+        autoplay={{ delay: 2000 }}
+        loop={true}
+        navigation={{
+          nextEl: '.swiper-button-next-custom',
+          prevEl: '.swiper-button-prev-custom',
+        }}
+        breakpoints={{
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+          1280: { slidesPerView: 4 },
+        }}
+        className="max-w-7xl mx-auto"
+      >
+        {empresas.map((empresa, index) => (
+          <SwiperSlide key={index}>
+            <div className="relative flex flex-col items-center">
+              <Image
+                src={empresa.imagens[0]}
+                alt={`Imagem de ${empresa.nome}`}
+                width={300}
+                height={200}
+                className="rounded-lg cursor-pointer"
+                onClick={() => openModal(empresa, 0)}
+              />
+              <div
+                className="mt-2 text-white text-lg font-medium"
+                style={{ fontFamily: 'Montserrat, sans-serif' }}
+              >
+                {empresa.nome}
+              </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-5">
-                {empresas.map((empresa, index) => (
-                    <div
-                        key={index}
-                        className="relative cursor-pointer transform transition-transform duration-200 hover:scale-105"
-                        onClick={() => openModal(index)}
-                        style={{ borderRadius: '10px', overflow: 'hidden' }}
-                    >
-                        <Image
-                            src={empresa.imagens[0]}
-                            alt={`Imagem de ${empresa.nome}`}
-                            width={300}
-                            height={250}
-                            layout="responsive"
-                            objectFit="cover"
-                            className='max-h-50'
-                        />
-                        <div className="absolute bottom-0 w-full bg-opacity-70 bg-black text-white py-2 text-lg"
-                             style={{ fontFamily: 'Montserrat, sans-serif' }}
-                        >
-                            {empresa.nome}
-                        </div>
-                    </div>
-                ))}
-            </div>
+          </SwiperSlide>
+        ))}
+        {/* Custom navigation buttons */}
+        <button className="swiper-button-prev-custom text-white absolute left-0 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-gray-800 rounded-full">
+          <FiChevronLeft size={24} />
+        </button>
+        <button className="swiper-button-next-custom text-white absolute right-0 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-gray-800 rounded-full">
+          <FiChevronRight size={24} />
+        </button>
+      </Swiper>
 
-            {isModalOpen && currentEmpresa && (
-                <div
-                    className="fixed inset-0 flex justify-center items-center z-50"
-                    style={{ backgroundColor: 'rgba(0, 0, 0, 0.8)' }}
-                    onClick={closeModal}
-                >
-                    <div className="relative w-full max-w-4xl h-auto">
-                        <div className="relative flex items-center justify-center">
-                            <Image
-                                src={currentEmpresa.imagens[imageIndex]}
-                                alt={`Imagem ${imageIndex + 1} de ${currentEmpresa.nome}`}
-                                width={800}
-                                height={500}
-                                className="object-cover rounded-xl"
-                            />
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    handlePrevImage();
-                                }}
-                                className="absolute top-1/2 left-2 transform -translate-y-1/2 flex items-center justify-center"
-                                style={{
-                                    backgroundColor: 'rgba(31, 41, 55, 0.75)',
-                                    color: 'white',
-                                    width: '40px',
-                                    height: '40px',
-                                    borderRadius: '50%',
-                                }}
-                            >
-                                <FiChevronLeft size={20} />
-                            </button>
-                            <button
-                                onClick={(e) => {
-                                    e.stopPropagation();
-                                    handleNextImage();
-                                }}
-                                className="absolute top-1/2 right-2 transform -translate-y-1/2 flex items-center justify-center"
-                                style={{
-                                    backgroundColor: 'rgba(31, 41, 55, 0.75)',
-                                    color: 'white',
-                                    width: '40px',
-                                    height: '40px',
-                                    borderRadius: '50%',
-                                }}
-                            >
-                                <FiChevronRight size={20} />
-                            </button>
-                        </div>
-                        <button
-                            onClick={closeModal}
-                            className="absolute top-2 right-2 bg-white text-black rounded-full w-8 h-8 flex items-center justify-center"
-                        >
-                            &times;
-                        </button>
-                    </div>
-                </div>
-            )}
-        </section>
-    );
+      {/* Modal */}
+      {isModalOpen && currentEmpresa && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
+          onClick={closeModal}
+        >
+          <div
+            className="relative flex flex-col items-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-2 right-2 text-white text-2xl"
+              onClick={closeModal}
+            >
+              &times;
+            </button>
+            <Image
+              src={currentEmpresa.imagens[currentImageIndex]}
+              alt={`Imagem ${currentImageIndex + 1} de ${currentEmpresa.nome}`}
+              width={800}
+              height={500}
+              className="rounded-lg"
+            />
+            <div className="flex justify-between w-full mt-4">
+              <button
+                onClick={handlePrevImage}
+                className="text-white bg-gray-800 p-2 rounded-full"
+              >
+                <FiChevronLeft size={24} />
+              </button>
+              <button
+                onClick={handleNextImage}
+                className="text-white bg-gray-800 p-2 rounded-full"
+              >
+                <FiChevronRight size={24} />
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
 };
 
-export default PortfolioSection;
+export default PortfolioCarousel;
