@@ -5,8 +5,8 @@ const Map = () => {
                 src="https://maps.google.com.br/maps?q=B2+Frotas+-+Personalização+de+Frotas&output=embed"
                 allowFullScreen
                 loading="lazy"
-                className='w-screen'
-                height={300}
+                className='w-full'
+                height={480}
             ></iframe>
         </div>
     )
