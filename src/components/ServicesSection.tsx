@@ -63,7 +63,6 @@ const ServicesSection = () => {
                             onClick={() => openModal(service.imageUrl)}
                             width={500}
                             height={300}
-                            objectFit="cover"
                             quality={90}
                             priority
                         />
