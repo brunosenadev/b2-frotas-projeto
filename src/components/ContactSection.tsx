@@ -12,17 +12,21 @@ const ContactSection = () => {
             className='pb-20 mt-10'
         >
             <div className="relative z-10 text-center">
-                <div className="flex justify-center items-center mb-5">
-                    <div className="w-1 h-10 bg-red-500 mr-4"></div>
-                    <h2 className="text-2xl font-semibold tracking-wide text-black" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                <div className="flex items-center mb-8">
+                    <div className="flex-grow h-1 bg-red-500"></div>
+                    <h2
+                        className="mx-4 text-2xl font-semibold tracking-wide text-black whitespace-nowrap"
+                        style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    >
                         CONTATO
                     </h2>
+                    <div className="flex-grow h-1 bg-red-500"></div>
                 </div>
                 <p className="font-semibold text-lg md:text-2xl mt-2 text-center">
                     Entre em contato com a nossa equipe e vamos juntos transformar a identidade da sua empresa!
                 </p>
                 <br />
-                <div className="sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-4 justify-between">
+                <div className="sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-2 justify-between">
                     <div className="mt-1 mb-4 md:ml-10 lg:md-10 lg:space-y-20">
                         <h2 className="text-2xl font-semibold text-start mb-4 sm:mt-4">Entre em contato</h2>
                         <div className="text-xl font-semibold text-start">
@@ -58,10 +62,10 @@ const ContactSection = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="">
+                    <div>
                         <Contact />
                     </div>
-                    <div className='mb-1 lg:ml-10'>
+                    <div className='mb-1 md:ml-20 lg:ml-20'>
                         <h2 className="text-2xl font-semibold text-center mb-4 sm:mt-4">Localização</h2>
                         <Map />
                     </div>

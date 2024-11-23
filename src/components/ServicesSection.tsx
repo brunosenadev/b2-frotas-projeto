@@ -27,7 +27,6 @@ const services = [
         title: 'ADESIVAÇÃO',
         imageUrl: '/servicos/adesivacao.webp',
     },
-
 ];
 
 const ServicesSection = () => {
@@ -46,16 +45,32 @@ const ServicesSection = () => {
 
     return (
         <section id="services" className="py-8 px-4 text-center pt-0">
-            <div className="grid grid-col-2 mt-5 gap-6 md:grid-cols-3 lg:grid-cols-5">
+            <div className="grid grid-col-1 mt-5 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
                 {services.map((service) => (
                     <div
                         key={service.id}
                         style={{ background: 'rgba(41,52,74,255)' }}
                         className="text-white rounded-2xl p-6 flex flex-col items-center transform transition-transform duration-200 hover:scale-105"
                     >
-                        <h3 className="font-semibold text-lg mb-2" style={{ minHeight: '3em', fontFamily: 'Montserrat, sans-serif' }}>
-                            {service.title}
-                        </h3>
+                        {/* Contêiner fixo para o título */}
+                        <div
+                            className="flex items-center justify-center text-center"
+                            style={{
+                                height: '4rem', // Altura fixa para o título
+                                overflow: 'hidden', // Evita quebra com textos grandes
+                            }}
+                        >
+                            <h3
+                                className="font-semibold text-lg"
+                                style={{
+                                    fontFamily: 'Montserrat, sans-serif',
+                                    lineHeight: '1.2',
+                                }}
+                            >
+                                {service.title}
+                            </h3>
+                        </div>
+                        {/* Imagem */}
                         <Image
                             src={service.imageUrl}
                             alt={service.title}
@@ -69,6 +84,8 @@ const ServicesSection = () => {
                     </div>
                 ))}
             </div>
+
+            {/* Modal */}
             {isModalOpen && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
