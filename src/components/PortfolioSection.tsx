@@ -81,7 +81,7 @@ const PortfolioCarousel = () => {
       <div className="flex items-center mb-8">
         <div className="flex-grow h-1 bg-red-500"></div>
         <h2
-          className="mx-4 text-2xl font-semibold tracking-wide text-black whitespace-nowrap"
+          className="mx-4 text-2xl font-semibold tracking-wide text-white whitespace-nowrap"
           style={{ fontFamily: 'Montserrat, sans-serif' }}
         >
           NOSSO PORTFÓLIO
@@ -128,7 +128,6 @@ const PortfolioCarousel = () => {
             </div>
           </SwiperSlide>
         ))}
-        {/* Custom navigation buttons */}
         <button className="swiper-button-prev-custom text-white absolute left-0 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-gray-800 rounded-full">
           <FiChevronLeft size={24} />
         </button>
@@ -136,8 +135,6 @@ const PortfolioCarousel = () => {
           <FiChevronRight size={24} />
         </button>
       </Swiper>
-
-      {/* Modal */}
       {isModalOpen && currentEmpresa && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"

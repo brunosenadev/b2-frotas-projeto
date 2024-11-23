@@ -17,12 +17,13 @@ const AboutSection = () => {
                 </h2>
                 <div className="flex-grow h-1 bg-red-500"></div>
             </div>
-            <div className="flex flex-col mt-4 px-4 px-4 sm:px-12 lg:px-24 xl:px-[350px]">
+            <div className="flex flex-col mt-4 px-4 sm:px-12 lg:px-24 xl:px-[350px]">
                 <p
                     className="text-black md:text-lg text-justify leading-relaxed"
                     style={{
                         fontFamily: 'Roboto, sans-serif',
-                        color: 'rgba(41,52,74,255)',
+                        // color: 'rgba(41,52,74,255)',
+                        color: 'black'
                     }}
                 >
                     Há mais de 30 anos no mercado, a <strong>B2 Frotas</strong> se destaca como uma referência em qualidade e expertise na <strong>pintura e adesivação de baús.</strong> Nosso compromisso com a excelência e a inovação nos coloca na vanguarda do setor, oferecendo soluções personalizadas que atendem às necessidades específicas de cada cliente.
