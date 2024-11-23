@@ -78,14 +78,15 @@ const PortfolioCarousel = () => {
 
   return (
     <section id="portfolio" className="py-8 px-4 text-center">
-      <div className="flex justify-center items-center mb-5">
-        <div className="w-1 h-10 bg-red-500 mr-4"></div>
+      <div className="flex items-center mb-8">
+        <div className="flex-grow h-1 bg-red-500"></div>
         <h2
-          className="text-2xl font-semibold tracking-wide text-white"
+          className="mx-4 text-2xl font-semibold tracking-wide text-black whitespace-nowrap"
           style={{ fontFamily: 'Montserrat, sans-serif' }}
         >
           NOSSO PORTFÓLIO
         </h2>
+        <div className="flex-grow h-1 bg-red-500"></div>
       </div>
 
       <Swiper
