@@ -5,7 +5,7 @@ const HomeSection = () => {
     return (
         <section id="home" className='mt-4'>
             <Image
-                src="/caminhao.png"
+                src="/caminhao-1.jpg"
                 alt="Logo"
                 width={1000}
                 height={500}
