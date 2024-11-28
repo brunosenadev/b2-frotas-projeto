@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
@@ -12,41 +12,23 @@ interface Empresa {
   imagens: string[];
 }
 
-const empresas = [
-  {
-    nome: "Empresa A",
-    imagens: ["/bv.webp", "/caminhao.webp", "/bv2.jpg"],
-  },
-  {
-    nome: "Empresa B",
-    imagens: ["/bv.webp", "/bv.webp", "/bv.webp"],
-  },
-  {
-    nome: "Empresa C",
-    imagens: ["/bv.webp", "/bv.webp", "/bv.webp"],
-  },
-  {
-    nome: "Empresa D",
-    imagens: ["/bv.webp", "/bv.webp", "/bv.webp"],
-  },
-  {
-    nome: "Empresa E",
-    imagens: ["/bv.webp", "/bv.webp", "/bv.webp"],
-  },
-  {
-    nome: "Empresa F",
-    imagens: ["/bv.webp", "/bv.webp", "/bv.webp"],
-  },
-  {
-    nome: "Empresa G",
-    imagens: ["/bv.webp", "/bv.webp", "/bv.webp"],
-  },
-];
-
 const PortfolioCarousel = () => {
+  const [empresas, setEmpresas] = useState<Empresa[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentEmpresa, setCurrentEmpresa] = useState(empresas[0]);
+  const [currentEmpresa, setCurrentEmpresa] = useState<Empresa | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Carregar o JSON de empresas
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch('/empresaswebp.json');
+      const data = await response.json();
+      setEmpresas(data);
+      setCurrentEmpresa(data[0]); // Definir a primeira empresa como padrão
+    };
+
+    fetchData();
+  }, []);
 
   const openModal = (empresa: Empresa, imageIndex: number) => {
     setCurrentEmpresa(empresa);
@@ -101,10 +83,10 @@ const PortfolioCarousel = () => {
         }}
         breakpoints={{
           0: { slidesPerView: 1 },
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-          1280: { slidesPerView: 4 },
+          640: { slidesPerView: 2 },
+          768: { slidesPerView: 3 },
+          1024: { slidesPerView: 4 },
+          1280: { slidesPerView: 5 },
         }}
         className="max-w-7xl mx-auto"
       >
@@ -114,9 +96,9 @@ const PortfolioCarousel = () => {
               <Image
                 src={empresa.imagens[0]}
                 alt={`Imagem de ${empresa.nome}`}
-                width={300}
+                width={300} 
                 height={200}
-                className="rounded-lg cursor-pointer"
+                className="w-full h-40"
                 onClick={() => openModal(empresa, 0)}
               />
               <div
@@ -154,8 +136,8 @@ const PortfolioCarousel = () => {
               src={currentEmpresa.imagens[currentImageIndex]}
               alt={`Imagem ${currentImageIndex + 1} de ${currentEmpresa.nome}`}
               width={800}
-              height={500}
-              className="rounded-lg"
+              height={120}
+              className="rounded-lg w-full md:h-[800px]"
             />
             <div className="flex justify-between w-full mt-4">
               <button

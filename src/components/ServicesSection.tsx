@@ -52,12 +52,11 @@ const ServicesSection = () => {
                         style={{ background: 'rgba(41,52,74,255)' }}
                         className="text-white rounded-2xl p-6 flex flex-col items-center transform transition-transform duration-200 hover:scale-105"
                     >
-                        {/* Contêiner fixo para o título */}
                         <div
                             className="flex items-center justify-center text-center"
                             style={{
-                                height: '4rem', // Altura fixa para o título
-                                overflow: 'hidden', // Evita quebra com textos grandes
+                                height: '4rem', 
+                                overflow: 'hidden',
                             }}
                         >
                             <h3
@@ -70,7 +69,6 @@ const ServicesSection = () => {
                                 {service.title}
                             </h3>
                         </div>
-                        {/* Imagem */}
                         <Image
                             src={service.imageUrl}
                             alt={service.title}
@@ -84,8 +82,6 @@ const ServicesSection = () => {
                     </div>
                 ))}
             </div>
-
-            {/* Modal */}
             {isModalOpen && (
                 <div
                     className="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50"
