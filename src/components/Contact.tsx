@@ -5,6 +5,23 @@ const ContactForm = () => {
   const form = useRef<HTMLFormElement>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [phone, setPhone] = useState("");
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let input = e.target.value.replace(/\D/g, "");
+    if (input.length > 10) {
+      input = input.replace(/^(\d{2})(\d{5})(\d{4}).*/, "($1) $2-$3");
+    } else if (input.length > 6) {
+      input = input.replace(/^(\d{2})(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+    } else if (input.length > 2) {
+      input = input.replace(/^(\d{2})(\d{0,4}).*/, "($1) $2");
+    } else if (input.length > 0) {
+      input = input.replace(/^(\d*)/, "($1");
+    } else {
+      input = "";
+    }
+    setPhone(input);
+  };
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -63,11 +80,12 @@ const ContactForm = () => {
         </label>
         <input
           type="tel"
-          name="from_phone"
+          value={phone}
+          onChange={handlePhoneChange}
           placeholder="(47) 91234-5678"
-          pattern="\(\d{2}\) \d{4,5}-\d{4}"
-          required
           className="w-full p-2 border border-gray-300 rounded-md mt-2 text-black"
+          name="from_phone"
+          required
         />
 
         <label
