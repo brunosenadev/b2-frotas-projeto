@@ -23,14 +23,14 @@ const Footer = () => {
                     <Image
                         src={'/b2b-vetor.svg'}
                         alt='B2 Frotas Personalização'
-                        width={120}
+                        width={140}
                         height={50}
                         priority
                     />
                     <Image
-                        src={'/30anos.webp'}
+                        src={'/1989.webp'}
                         alt="30 anos"
-                        width={120}
+                        width={140}
                         height={50}
                         priority
                     />
