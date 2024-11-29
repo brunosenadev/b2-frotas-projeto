@@ -18,13 +18,12 @@ const PortfolioCarousel = () => {
   const [currentEmpresa, setCurrentEmpresa] = useState<Empresa | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Carregar o JSON de empresas
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('/empresaswebp.json');
+      const response = await fetch('/empresasimagens.json');
       const data = await response.json();
       setEmpresas(data);
-      setCurrentEmpresa(data[0]); // Definir a primeira empresa como padrão
+      setCurrentEmpresa(data[0]);
     };
 
     fetchData();
@@ -135,9 +134,9 @@ const PortfolioCarousel = () => {
             <Image
               src={currentEmpresa.imagens[currentImageIndex]}
               alt={`Imagem ${currentImageIndex + 1} de ${currentEmpresa.nome}`}
-              width={800}
+              width={500}
               height={120}
-              className="rounded-lg w-full md:h-[800px]"
+              className="rounded-lg w-full md:h-[500px]"
             />
             <div className="flex justify-between w-full mt-4">
               <button
