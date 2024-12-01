@@ -26,7 +26,7 @@ const Navbar = memo(() => {
     return (
         <div>
             <div
-                className="min-w-full w-full min-h-[30px] flex items-center justify-end px-4 sm:px-12 lg:px-16 xl:px-[350px] hidden md:flex"
+                className="min-w-full w-full min-h-[30px] flex items-center justify-end px-4 sm:px-12 lg:px-16 xl:px-[250px] hidden md:flex"
                 style={{ background: 'rgba(41,52,74,255)' }}
             >
                 <a href="https://wa.me/554788086608" target="_blank" rel="noopener noreferrer" className='text-white font-semibold mr-4'>
@@ -43,27 +43,40 @@ const Navbar = memo(() => {
                 </a>
             </div>
             <NavigationMenu
-                className="min-w-full w-full h-[70%] min-h-[60px] flex items-center justify-between px-4 sm:px-12 lg:px-16 xl:px-[350px]"
+                className="min-w-full w-full h-[70%] min-h-[60px] flex items-center justify-between px-4 sm:px-12 lg:px-16 xl:px-[250px]"
                 style={{ background: 'rgba(41,52,74,255)' }}
             >
                 <div className="flex items-center">
-                    <NavigationMenuItem className="list-none">
+                    <NavigationMenuItem className="list-none mr-3 pb-10 mt-6 md:mt-8">
                         <NavigationMenuLink
                             onClick={() => handleScroll('home')}
                             className="hover:cursor-pointer">
                             <Image
                                 src={'/b2b-vetor.svg'}
                                 alt='b2-logo'
-                                width={80}
-                                height={40}
+                                width={100}
+                                height={60}
                                 className='md:mt-[-20px] md:mb-4'
                             />
                         </NavigationMenuLink>
                     </NavigationMenuItem>
+                    <NavigationMenuItem className="list-none">
+                        <NavigationMenuLink
+                            onClick={() => handleScroll('home')}
+                            className="hover:cursor-pointer">
+                            <Image
+                                src={'/1989.webp'}
+                                alt="30 anos"
+                                width={100}
+                                height={60}
+                                priority
+                            />
+                        </NavigationMenuLink>
+                    </NavigationMenuItem>
                 </div>
-                <div className="hidden space-x-4 md:flex mt-6">
+                <div className="hidden space-x-4 md:flex mt-16">
                     <NavigationMenuItem
-                        className="text-white mx-1 text-md font-semibold list-none hover:cursor-pointer"
+                        className="text-white mx-1 text-lg font-semibold list-none hover:cursor-pointer"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('home');
@@ -73,7 +86,7 @@ const Navbar = memo(() => {
                         HOME
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-md font-semibold list-none hover:cursor-pointer"
+                        className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('about');
@@ -83,7 +96,7 @@ const Navbar = memo(() => {
                         SOBRE NÓS
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-md font-semibold list-none hover:cursor-pointer"
+                        className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('portfolio');
@@ -93,7 +106,7 @@ const Navbar = memo(() => {
                         PORTFÓLIO
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-md font-semibold list-none hover:cursor-pointer"
+                        className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('contact');
