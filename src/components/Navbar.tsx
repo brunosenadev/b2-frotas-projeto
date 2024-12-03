@@ -43,11 +43,11 @@ const Navbar = memo(() => {
                 </a>
             </div>
             <NavigationMenu
-                className="min-w-full w-full h-[70%] min-h-[60px] flex items-center justify-between px-4 sm:px-12 lg:px-16 xl:px-[250px]"
+                className="min-w-full w-full h-[70%] min-h-[60px] flex items-center justify-between px-4 sm:px-12 lg:px-16 xl:px-[300px]"
                 style={{ background: 'rgba(41,52,74,255)' }}
             >
-                <div className="flex items-center">
-                    <NavigationMenuItem className="list-none mr-3 pb-10 mt-6 md:mt-8">
+                <div className="flex items-center pb-2">
+                    <NavigationMenuItem className="list-none mr-3">
                         <NavigationMenuLink
                             onClick={() => handleScroll('home')}
                             className="hover:cursor-pointer">
@@ -56,7 +56,6 @@ const Navbar = memo(() => {
                                 alt='b2-logo'
                                 width={100}
                                 height={60}
-                                className='md:mt-[-20px] md:mb-4'
                             />
                         </NavigationMenuLink>
                     </NavigationMenuItem>
