@@ -50,7 +50,6 @@ const AboutSection = () => {
                         Especialistas na pintura de baús de caminhões, oferecemos soluções sob medida para empresas que buscam destacar sua marca nas estradas e fortalecer sua presença no mercado. Com uma equipe experiente e comprometida, garantimos excelência em cada detalhe, desde a escolha dos materiais até a execução final.
                     </p>
                 </div>
-<<<<<<< HEAD
                 <div className="flex flex-col items-end justify-center rounded-xl">
                     <div className="justify-center items-center text-center">
                         <Image
@@ -78,31 +77,6 @@ const AboutSection = () => {
                             Imagem do primeiro caminhão personalizado em 1989
                         </span>
                     </div>
-=======
-                <div className="flex flex-col items-center justify-center p-4 rounded-xl">
-                    <Image
-                        src="/primeiro-caminhao.webp"
-                        alt="Primeiro caminhão"
-                        width={700}
-                        height={500}
-                        className="object-cover rounded-xl"
-                    />
-                    <span className="text-black italic text-sm mt-2">
-                        Imagem do primeiro caminhão personalizado em 1989
-                    </span>
-                </div>
-                <div className="flex flex-col items-center justify-center p-4 rounded-xl">
-                    <Image
-                        src="/koerich1990.jpg"
-                        alt="Caminhão personalizado"
-                        width={600}
-                        height={500}
-                        className="object-cover rounded-xl"
-                    />
-                    <span className="text-black italic text-sm mt-2">
-                        Baú da Koerich de 1990
-                    </span>
->>>>>>> parent of 7714d01 (update)
                 </div>
                 <div className="flex flex-col items-center justify-center p-4 rounded-xl">
                     <p
