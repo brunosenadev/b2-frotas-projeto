@@ -8,9 +8,9 @@ const HomeSection = () => {
     useEffect(() => {
         const compressImage = async () => {
             const fetchImage = async () => {
-                const response = await fetch('/home.jpeg');
+                const response = await fetch('/home-section.jpg');
                 const blob = await response.blob();
-                return new File([blob], 'home.jpeg', { type: blob.type });
+                return new File([blob], 'home-section.jpg', { type: blob.type });
             };
 
             const imageFile = await fetchImage();

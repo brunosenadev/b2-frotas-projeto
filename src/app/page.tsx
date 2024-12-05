@@ -16,7 +16,7 @@ export default function Home() {
     useEffect(() => {
         const checkImageLoad = () => {
             const nativeImage = new globalThis.Image();  
-            nativeImage.src = '/home.jpeg'; 
+            nativeImage.src = '/home-section.jpg'; 
             nativeImage.onload = () => {
                 setImageLoaded(true); 
             };
@@ -32,7 +32,7 @@ export default function Home() {
         if (imageLoaded) {
             const timeoutId = setTimeout(() => {
                 setIsLoading(false);  
-            }, 1700);
+            }, 5);
 
             return () => clearTimeout(timeoutId); 
         }
