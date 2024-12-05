@@ -18,7 +18,7 @@ const Footer = () => {
             className="w-full bg-[#29344A] py-8 text-gray-300"
             style={{ fontFamily: "Montserrat, sans-serif" }}
         >
-            <div className="container mx-auto flex md:flex-row flex-col md:flex-row justify-between items-start md:items-center px-4">
+            <div className="container mx-auto flex md:flex-row flex-col md:flex-row justify-center items-start md:items-center px-4">
                 <div className="flex flex-row space-x-4">
                     <Image
                         src={'/b2b-vetor.svg'}
@@ -35,7 +35,7 @@ const Footer = () => {
                         priority
                     />
                 </div>
-                <div className="flex flex-col mt-10 md:flex-row space-y-6 md:space-y-0 md:space-x-12">
+                <div className="flex flex-col mt-10 md:flex-row space-y-6 md:space-y-0 ml-6 md:space-x-12">
                     <div>
                         <h4 className="text-white font-bold mb-3">NAVEGAÇÃO</h4>
                         <NavigationMenu>

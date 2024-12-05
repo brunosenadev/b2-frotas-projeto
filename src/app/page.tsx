@@ -7,7 +7,7 @@ import ContactSection from '@/components/ContactSection';
 import ServicesSection from '@/components/ServicesSection';
 import PortfolioSection from '@/components/PortfolioSection';
 import Footer from '@/components/Footer';
-import Image from 'next/image';  
+import Image from 'next/image';
 
 export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +16,7 @@ export default function Home() {
     useEffect(() => {
         const checkImageLoad = () => {
             const nativeImage = new globalThis.Image();  
-            nativeImage.src = '/caminhao.png'; 
+            nativeImage.src = '/home.jpeg'; 
             nativeImage.onload = () => {
                 setImageLoaded(true); 
             };

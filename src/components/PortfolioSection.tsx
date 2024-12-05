@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
@@ -12,12 +12,13 @@ interface Empresa {
   imagens: string[];
 }
 
-const PortfolioCarousel = () => {
+const PortfolioSection = () => {
   const [empresas, setEmpresas] = useState<Empresa[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentEmpresa, setCurrentEmpresa] = useState<Empresa | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Carregamento otimizado dos dados
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch('/empresasimagens.json');
@@ -29,18 +30,21 @@ const PortfolioCarousel = () => {
     fetchData();
   }, []);
 
+  // Função de abrir o modal com as imagens
   const openModal = (empresa: Empresa, imageIndex: number) => {
     setCurrentEmpresa(empresa);
     setCurrentImageIndex(imageIndex);
     setIsModalOpen(true);
   };
 
+  // Função de fechar o modal
   const closeModal = () => {
     setIsModalOpen(false);
     setCurrentEmpresa(empresas[0]);
     setCurrentImageIndex(0);
   };
 
+  // Funções para navegação entre as imagens
   const handlePrevImage = () => {
     if (currentEmpresa) {
       setCurrentImageIndex((prevIndex) =>
@@ -56,6 +60,33 @@ const PortfolioCarousel = () => {
       );
     }
   };
+
+  // Usar useMemo para memorizar a estrutura do Swiper e evitar re-renderizações desnecessárias
+  const empresaSlides = useMemo(
+    () =>
+      empresas.map((empresa, index) => (
+        <SwiperSlide key={index}>
+          <div className="relative flex flex-col items-center">
+            <Image
+              src={empresa.imagens[0]}
+              alt={`Imagem de ${empresa.nome}`}
+              width={300} 
+              height={200}
+              className="w-full h-40"
+              loading="lazy" // Imagens serão carregadas de forma assíncrona
+              onClick={() => openModal(empresa, 0)}
+            />
+            <div
+              className="mt-2 text-white text-lg font-medium"
+              style={{ fontFamily: 'Montserrat, sans-serif' }}
+            >
+              {empresa.nome}
+            </div>
+          </div>
+        </SwiperSlide>
+      )),
+    [empresas]
+  );
 
   return (
     <section id="portfolio" className="py-8 px-4 text-center">
@@ -87,28 +118,9 @@ const PortfolioCarousel = () => {
           1024: { slidesPerView: 4 },
           1280: { slidesPerView: 5 },
         }}
-        className="max-w-7xl mx-auto"
+        className="max-w-8xl mx-auto"
       >
-        {empresas.map((empresa, index) => (
-          <SwiperSlide key={index}>
-            <div className="relative flex flex-col items-center">
-              <Image
-                src={empresa.imagens[0]}
-                alt={`Imagem de ${empresa.nome}`}
-                width={300} 
-                height={200}
-                className="w-full h-40"
-                onClick={() => openModal(empresa, 0)}
-              />
-              <div
-                className="mt-2 text-white text-lg font-medium"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
-              >
-                {empresa.nome}
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
+        {empresaSlides}
         <button className="swiper-button-prev-custom text-white absolute left-0 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-gray-800 rounded-full">
           <FiChevronLeft size={24} />
         </button>
@@ -116,6 +128,7 @@ const PortfolioCarousel = () => {
           <FiChevronRight size={24} />
         </button>
       </Swiper>
+
       {isModalOpen && currentEmpresa && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80"
@@ -137,6 +150,7 @@ const PortfolioCarousel = () => {
               width={500}
               height={120}
               className="rounded-lg w-full md:h-[500px]"
+              loading="lazy"
             />
             <div className="flex justify-between w-full mt-4">
               <button
@@ -159,4 +173,4 @@ const PortfolioCarousel = () => {
   );
 };
 
-export default PortfolioCarousel;
+export default PortfolioSection;

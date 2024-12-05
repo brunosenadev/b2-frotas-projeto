@@ -55,7 +55,7 @@ const ServicesSection = () => {
                         <div
                             className="flex items-center justify-center text-center"
                             style={{
-                                height: '4rem', 
+                                height: '6rem', 
                                 overflow: 'hidden',
                             }}
                         >
