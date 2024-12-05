@@ -29,6 +29,7 @@ const AboutSection = () => {
                     >
                         Há mais de 30 anos no mercado, a <strong>B2 Frotas</strong> se destaca como uma referência em qualidade e expertise na <strong>pintura e adesivação de baús.</strong>
                     </p>
+                    <br/>
                     <p
                         className="text-black md:text-2xl text-justify leading-relaxed"
                         style={{
@@ -39,6 +40,7 @@ const AboutSection = () => {
                     >
                         Nosso compromisso com a excelência e a inovação nos coloca na vanguarda do setor, oferecendo soluções personalizadas que atendem às necessidades específicas de cada cliente.
                     </p>
+                    <br/>
                     <p
                         className="text-black md:text-2xl text-justify leading-relaxed"
                         style={{
@@ -89,6 +91,7 @@ const AboutSection = () => {
                     >
                         Além disso, nos orgulhamos de cultivar relações de confiança e parceria com nossos clientes, entendendo suas necessidades específicas e oferecendo soluções personalizadas que agregam valor ao seu negócio. 
                     </p>
+                    <br/>
                     <p
                         className="text-black md:text-2xl text-justify leading-relaxed"
                         style={{
