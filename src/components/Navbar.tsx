@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -22,6 +22,19 @@ const Navbar = memo(() => {
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
+
+    // Detectar cliques fora da navbar
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (isOpen && !(event.target as HTMLElement).closest('.navbar-container')) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [isOpen]);
 
     return (
         <div>
@@ -123,7 +136,7 @@ const Navbar = memo(() => {
                         </a>
                     </NavigationMenuItem>
                 </div>
-                <div className="md:hidden flex items-center justify-center mr-2">
+                <div className="md:hidden flex items-center justify-center ml-10">
                     <button onClick={toggleMenu} className="focus:outline-none">
                         <div className="flex flex-col">
                             <span className="block w-8 h-1 bg-white mb-1"></span>
@@ -135,13 +148,18 @@ const Navbar = memo(() => {
             </NavigationMenu>
             {isOpen && (
                 <div
-                    className="fixed top-0 right-0 w-[35%] text-white flex flex-col justify-start items-start text-start md:hidden sm:hidden"
-                    style={{ background: 'rgba(41,52,74,255)' }}
+                    className="navbar-container fixed top-0 right-0 w-[35%] h-[100vh] text-white flex flex-col justify-start items-start text-start md:hidden sm:hidden"
+                    style={{ background: 'rgba(41,52,74,255)', zIndex: 9999 }}
                 >
+                    <button
+                        onClick={() => setIsOpen(false)}
+                        className="absolute top-4 right-4 text-white text-2xl focus:outline-none"
+                    >
+                        &times;
+                    </button>
                     <NavigationMenuItem
                         className="py-2 hover:bg-gray-700 w-full list-none mt-10 pb-0"
-                    >
-                    </NavigationMenuItem>
+                    />
                     <NavigationMenuItem
                         className="py-2 hover:bg-gray-700 w-full list-none"
                         onClick={() => {
@@ -150,11 +168,7 @@ const Navbar = memo(() => {
                         }}
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                     >
-                        <span
-                            className='ml-4'
-                        >
-                            HOME
-                        </span>
+                        <span className='ml-4'>HOME</span>
                     </NavigationMenuItem>
                     <NavigationMenuItem
                         className="py-2 hover:bg-gray-700 w-full list-none"
@@ -164,11 +178,7 @@ const Navbar = memo(() => {
                         }}
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                     >
-                        <span
-                            className='ml-4'
-                        >
-                            SOBRE NÓS
-                        </span>
+                        <span className='ml-4'>SOBRE NÓS</span>
                     </NavigationMenuItem>
                     <NavigationMenuItem
                         className="py-2 hover:bg-gray-700 w-full list-none"
@@ -178,11 +188,7 @@ const Navbar = memo(() => {
                         }}
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                     >
-                        <span
-                            className='ml-4'
-                        >
-                            PORTFÓLIO
-                        </span>
+                        <span className='ml-4'>PORTFÓLIO</span>
                     </NavigationMenuItem>
                     <NavigationMenuItem
                         className="py-2 hover:bg-gray-700 w-full list-none"
@@ -192,11 +198,7 @@ const Navbar = memo(() => {
                         }}
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                     >
-                        <span
-                            className='ml-4'
-                        >
-                            CONTATO
-                        </span>
+                        <span className='ml-4'>CONTATO</span>
                     </NavigationMenuItem>
                 </div>
             )}
