@@ -16,7 +16,7 @@ export default function RootLayout({
       <head>
         <link
           rel="preload"
-          href="/caminhao.png"  // Caminho correto para a sua imagem
+          href="/home.jpeg"  // Caminho correto para a sua imagem
           as="image"
           type="image/png"
           crossOrigin="anonymous"

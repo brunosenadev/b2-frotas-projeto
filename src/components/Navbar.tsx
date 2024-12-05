@@ -26,13 +26,9 @@ const Navbar = memo(() => {
     return (
         <div>
             <div
-                className="min-w-full w-full min-h-[30px] flex items-center justify-end px-4 sm:px-12 lg:px-16 xl:px-[250px] hidden md:flex"
+                className="min-w-full w-full min-h-[30px] flex items-center justify-center hidden md:flex"
                 style={{ background: 'rgba(41,52,74,255)' }}
             >
-                <a href="https://wa.me/554788086608" target="_blank" rel="noopener noreferrer" className='text-white font-semibold mr-4'>
-                    <FontAwesomeIcon icon={faWhatsapp} className="mr-2 text-lg align-middle font-semibold" style={{ color: 'white' }} />
-                    (47) 8808-6608
-                </a>
                 <a href="tel:+554733085589" className='text-white font-semibold mr-4'>
                     <FontAwesomeIcon icon={faPhone} className="mr-2 align-middle" />
                     (47) 3308-5589
@@ -43,7 +39,7 @@ const Navbar = memo(() => {
                 </a>
             </div>
             <NavigationMenu
-                className="min-w-full w-full h-[70%] min-h-[60px] flex items-center justify-between px-4 sm:px-12 lg:px-16 xl:px-[300px]"
+                className="min-w-full w-full h-[70%] min-h-[60px] flex items-center justify-center"
                 style={{ background: 'rgba(41,52,74,255)' }}
             >
                 <div className="flex items-center pb-2">
@@ -73,9 +69,9 @@ const Navbar = memo(() => {
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                 </div>
-                <div className="hidden space-x-4 md:flex mt-16">
+                <div className="hidden space-x-4 md:flex ml-4">
                     <NavigationMenuItem
-                        className="text-white mx-1 text-lg font-semibold list-none hover:cursor-pointer"
+                        className="text-white mx-1 text-xl pr-6 font-semibold list-none hover:cursor-pointer pt-2 border-r-4 border-white last:border-r-0"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('home');
@@ -85,7 +81,7 @@ const Navbar = memo(() => {
                         HOME
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
+                        className="text-white mx-4 text-xl font-semibold pr-6 list-none hover:cursor-pointer pt-2 border-r-4 border-white last:border-r-0"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('about');
@@ -95,7 +91,7 @@ const Navbar = memo(() => {
                         SOBRE NÓS
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
+                        className="text-white mx-4 text-xl font-semibold pr-6 list-none hover:cursor-pointer pt-2  border-r-4 border-white last:border-r-0"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('portfolio');
@@ -105,7 +101,7 @@ const Navbar = memo(() => {
                         PORTFÓLIO
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-lg font-semibold list-none hover:cursor-pointer"
+                        className="text-white mx-4 text-xl font-semibold list-none hover:cursor-pointer pt-2 "
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('contact');
@@ -114,8 +110,20 @@ const Navbar = memo(() => {
                     >
                         CONTATO
                     </NavigationMenuItem>
+                    <NavigationMenuItem
+                        className="text-white mx-4 text-xl font-semibold list-none hover:cursor-pointer"
+                        style={{ fontFamily: 'Montserrat, sans-serif' }}
+                        onClick={() => {
+                            handleScroll('contact');
+                            setIsOpen(false);
+                        }}
+                    >
+                        <a href="https://wa.me/554788086608" target="_blank" rel="noopener noreferrer" className='text-white font-semibold mr-4'>
+                            <FontAwesomeIcon icon={faWhatsapp} className="mr-2 text-5xl align-middle font-semibold" style={{ color: '#25D366' }} />
+                        </a>
+                    </NavigationMenuItem>
                 </div>
-                <div className="md:hidden flex items-center mr-2">
+                <div className="md:hidden flex items-center justify-center mr-2">
                     <button onClick={toggleMenu} className="focus:outline-none">
                         <div className="flex flex-col">
                             <span className="block w-8 h-1 bg-white mb-1"></span>

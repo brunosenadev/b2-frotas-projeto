@@ -26,7 +26,7 @@ const ContactSection = () => {
                     Entre em contato com a nossa equipe e vamos juntos transformar a identidade da sua empresa!
                 </p>
                 <br />
-                <div className="sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-2 justify-between px-4 sm:px-12 lg:px-24 xl:px-[100px]">
+                <div className="sm:grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 sm:gap-2 justify-between">
                     <div className="mt-1 mb-4 lg:space-y-10">
                         <h2 className="text-2xl font-semibold md:text-start mb-4 sm:mt-4">Contatos</h2>
                         <div className="text-xl font-semibold md:text-start">
