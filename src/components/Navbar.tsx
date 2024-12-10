@@ -50,28 +50,33 @@ const Navbar = memo(() => {
                     empresab2frotas@gmail.com
                 </a>
             </div>
-            <NavigationMenu
-                className="min-w-full w-full h-[70%] min-h-[60px] flex items-center justify-between px-10"
+            <div
+                className='flex items-center justify-center w-full pt-6 pb-6'
                 style={{ background: 'rgba(41,52,74,255)' }}
             >
-                <div className="flex items-center pb-2">
+                <Image
+                    src={'/b2b-vetor.svg'}
+                    alt='b2-logo'
+                    width={400}
+                    height={200}
+                />
+            </div>
+            <NavigationMenu
+                className="min-w-full w-full h-[70%] min-h-[60px] flex items-center justify-center px-4"
+
+            >
+                <div className="flex items-center">
                     <NavigationMenuItem className="list-none mr-3">
                         <NavigationMenuLink
                             onClick={() => handleScroll('home')}
                             className="hover:cursor-pointer">
-                            <Image
-                                src={'/b2b-vetor.svg'}
-                                alt='b2-logo'
-                                width={120}
-                                height={60}
-                            />
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                 </div>
-                <div className="hidden space-x-14 md:flex ml-4">
+                <div className="hidden space-x-8 md:flex ml-4">
                     <NavigationMenuItem
-                        className="text-white mx-1 text-2xl pr-12 font-semibold list-none hover:cursor-pointer pt-2 border-r-4 border-white last:border-r-0"
-                        style={{ fontFamily: 'Montserrat, sans-serif' }}
+                        className="text-white mx-1 text-2xl pr-12 font-semibold list-none hover:cursor-pointer border-r-4 border-white last:border-r-0 mt-2"
+                        style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
                         onClick={() => {
                             handleScroll('home');
                             setIsOpen(false);
@@ -80,8 +85,8 @@ const Navbar = memo(() => {
                         HOME
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-2xl font-semibold pr-12 list-none hover:cursor-pointer pt-2 border-r-4 border-white last:border-r-0"
-                        style={{ fontFamily: 'Montserrat, sans-serif' }}
+                        className="text-white mx-4 text-2xl font-semibold pr-12 list-none hover:cursor-pointer border-r-4 border-white last:border-r-0 mt-2"
+                        style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
                         onClick={() => {
                             handleScroll('about');
                             setIsOpen(false);
@@ -90,8 +95,8 @@ const Navbar = memo(() => {
                         SOBRE NÓS
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-2xl font-semibold pr-12 list-none hover:cursor-pointer pt-2  border-r-4 border-white last:border-r-0"
-                        style={{ fontFamily: 'Montserrat, sans-serif' }}
+                        className="text-white mx-4 text-2xl font-semibold pr-12 list-none hover:cursor-pointer  border-r-4 border-white last:border-r-0 mt-2"
+                        style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
                         onClick={() => {
                             handleScroll('portfolio');
                             setIsOpen(false);
@@ -100,8 +105,8 @@ const Navbar = memo(() => {
                         PORTFÓLIO
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-2xl font-semibold list-none hover:cursor-pointer pt-2 "
-                        style={{ fontFamily: 'Montserrat, sans-serif' }}
+                        className="text-white mx-4 text-2xl font-semibold list-none hover:cursor-pointer mt-2"
+                        style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
                         onClick={() => {
                             handleScroll('contact');
                             setIsOpen(false);
@@ -111,7 +116,7 @@ const Navbar = memo(() => {
                     </NavigationMenuItem>
                     <NavigationMenuItem
                         className="text-white text-2xl font-semibold list-none hover:cursor-pointer"
-                        style={{ fontFamily: 'Montserrat, sans-serif' }}
+                        style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
                         onClick={() => {
                             handleScroll('contact');
                             setIsOpen(false);
@@ -120,21 +125,6 @@ const Navbar = memo(() => {
                         <a href="https://wa.me/554788086608" target="_blank" rel="noopener noreferrer" className='text-white font-semibold mr-4'>
                             <FontAwesomeIcon icon={faWhatsapp} className="mr-2 text-5xl align-middle font-semibold" style={{ color: '#25D366' }} />
                         </a>
-                    </NavigationMenuItem>
-                </div>
-                <div className="flex items-center pb-2">
-                    <NavigationMenuItem className="list-none">
-                        <NavigationMenuLink
-                            onClick={() => handleScroll('home')}
-                            className="hover:cursor-pointer">
-                            <Image
-                                src={'/1989.webp'}
-                                alt="30 anos"
-                                width={120}
-                                height={60}
-                                priority
-                            />
-                        </NavigationMenuLink>
                     </NavigationMenuItem>
                 </div>
                 <div className="md:hidden flex items-center justify-center ml-10">
