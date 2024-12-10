@@ -61,7 +61,6 @@ const PortfolioSection = () => {
     }
   };
 
-  // Usar useMemo para memorizar a estrutura do Swiper e evitar re-renderizações desnecessárias
   const empresaSlides = useMemo(
     () =>
       empresas.map((empresa, index) => (
@@ -71,9 +70,9 @@ const PortfolioSection = () => {
               src={empresa.imagens[0]}
               alt={`Imagem de ${empresa.nome}`}
               width={300} 
-              height={200}
-              className="w-full h-40"
-              loading="lazy" // Imagens serão carregadas de forma assíncrona
+              height={100}
+              className="w-full h-60"
+              loading="lazy"
               onClick={() => openModal(empresa, 0)}
             />
             <div
@@ -118,7 +117,7 @@ const PortfolioSection = () => {
           1024: { slidesPerView: 4 },
           1280: { slidesPerView: 5 },
         }}
-        className="max-w-8xl mx-auto"
+        className="max-w-8xl h-[270px] mx-auto"
       >
         {empresaSlides}
         <button className="swiper-button-prev-custom text-white absolute left-0 top-1/2 transform -translate-y-1/2 z-10 p-3 bg-gray-800 rounded-full">

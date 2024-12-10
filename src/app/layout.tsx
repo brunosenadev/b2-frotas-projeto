@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "B2 Personalização de Frotas",
   description: "Site B2 Personalização de Frotas",
   icons: {
-    icon: '/b2b-vetor.svg'
+    icon: '/favicon.jpg'
   }
 };
 
