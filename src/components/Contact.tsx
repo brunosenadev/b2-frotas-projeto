@@ -11,10 +11,10 @@ const ContactForm = () => {
 
     if (form.current) {
       emailjs.sendForm(
-        'service_bi288cs',
-        'template_mer7d9i',
+        'service_f5egog8',
+        'template_y4lz9x7',
         form.current,
-        'SmBxififM0NfLk_-h',
+        'QnVHYHrXpWED1z_gW',
       ).then(
         (result) => {
           setIsSubmitted(true);
@@ -38,7 +38,7 @@ const ContactForm = () => {
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="w-full max-w-xl mx-auto bg-white p-6 rounded-md shadow-lg rounded-xl"
+        className="w-full max-w-xl mx-auto bg-white p-6 rounded-md shadow-lg"
         style={{ background: 'rgba(41,52,74,255)' }}
       >
         <label
