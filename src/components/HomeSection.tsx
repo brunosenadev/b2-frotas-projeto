@@ -34,7 +34,7 @@ const HomeSection = () => {
     }, []);
 
     return (
-        <section id="home" className="mt-4">
+        <section id="home">
             {compressedImage ? (
                 <Image
                     src={compressedImage}
