@@ -39,6 +39,7 @@ const ContactForm = () => {
           console.log('Email enviado com sucesso:', result.text);
           if (form.current != null) {
             form.current.reset();
+            setPhone('');
           }
         },
         (error) => {
