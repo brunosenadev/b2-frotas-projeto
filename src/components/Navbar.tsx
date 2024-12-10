@@ -23,7 +23,6 @@ const Navbar = memo(() => {
         setIsOpen(!isOpen);
     };
 
-    // Detectar cliques fora da navbar
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
             if (isOpen && !(event.target as HTMLElement).closest('.navbar-container')) {
@@ -52,7 +51,7 @@ const Navbar = memo(() => {
                 </a>
             </div>
             <NavigationMenu
-                className="min-w-full w-full h-[70%] min-h-[60px] flex items-center justify-center"
+                className="min-w-full w-full h-[70%] min-h-[60px] flex items-center justify-between px-10"
                 style={{ background: 'rgba(41,52,74,255)' }}
             >
                 <div className="flex items-center pb-2">
@@ -63,28 +62,15 @@ const Navbar = memo(() => {
                             <Image
                                 src={'/b2b-vetor.svg'}
                                 alt='b2-logo'
-                                width={100}
+                                width={120}
                                 height={60}
-                            />
-                        </NavigationMenuLink>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem className="list-none">
-                        <NavigationMenuLink
-                            onClick={() => handleScroll('home')}
-                            className="hover:cursor-pointer">
-                            <Image
-                                src={'/1989.webp'}
-                                alt="30 anos"
-                                width={100}
-                                height={60}
-                                priority
                             />
                         </NavigationMenuLink>
                     </NavigationMenuItem>
                 </div>
-                <div className="hidden space-x-4 md:flex ml-4">
+                <div className="hidden space-x-14 md:flex ml-4">
                     <NavigationMenuItem
-                        className="text-white mx-1 text-xl pr-6 font-semibold list-none hover:cursor-pointer pt-2 border-r-4 border-white last:border-r-0"
+                        className="text-white mx-1 text-2xl pr-12 font-semibold list-none hover:cursor-pointer pt-2 border-r-4 border-white last:border-r-0"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('home');
@@ -94,7 +80,7 @@ const Navbar = memo(() => {
                         HOME
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-xl font-semibold pr-6 list-none hover:cursor-pointer pt-2 border-r-4 border-white last:border-r-0"
+                        className="text-white mx-4 text-2xl font-semibold pr-12 list-none hover:cursor-pointer pt-2 border-r-4 border-white last:border-r-0"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('about');
@@ -104,7 +90,7 @@ const Navbar = memo(() => {
                         SOBRE NÓS
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-xl font-semibold pr-6 list-none hover:cursor-pointer pt-2  border-r-4 border-white last:border-r-0"
+                        className="text-white mx-4 text-2xl font-semibold pr-12 list-none hover:cursor-pointer pt-2  border-r-4 border-white last:border-r-0"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('portfolio');
@@ -114,7 +100,7 @@ const Navbar = memo(() => {
                         PORTFÓLIO
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-xl font-semibold list-none hover:cursor-pointer pt-2 "
+                        className="text-white mx-4 text-2xl font-semibold list-none hover:cursor-pointer pt-2 "
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('contact');
@@ -124,7 +110,7 @@ const Navbar = memo(() => {
                         CONTATO
                     </NavigationMenuItem>
                     <NavigationMenuItem
-                        className="text-white mx-4 text-xl font-semibold list-none hover:cursor-pointer"
+                        className="text-white text-2xl font-semibold list-none hover:cursor-pointer"
                         style={{ fontFamily: 'Montserrat, sans-serif' }}
                         onClick={() => {
                             handleScroll('contact');
@@ -134,6 +120,21 @@ const Navbar = memo(() => {
                         <a href="https://wa.me/554788086608" target="_blank" rel="noopener noreferrer" className='text-white font-semibold mr-4'>
                             <FontAwesomeIcon icon={faWhatsapp} className="mr-2 text-5xl align-middle font-semibold" style={{ color: '#25D366' }} />
                         </a>
+                    </NavigationMenuItem>
+                </div>
+                <div className="flex items-center pb-2">
+                    <NavigationMenuItem className="list-none">
+                        <NavigationMenuLink
+                            onClick={() => handleScroll('home')}
+                            className="hover:cursor-pointer">
+                            <Image
+                                src={'/1989.webp'}
+                                alt="30 anos"
+                                width={120}
+                                height={60}
+                                priority
+                            />
+                        </NavigationMenuLink>
                     </NavigationMenuItem>
                 </div>
                 <div className="md:hidden flex items-center justify-center ml-10">

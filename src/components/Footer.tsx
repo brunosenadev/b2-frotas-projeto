@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
-
     const handleScroll = (id: string) => {
         const section = document.getElementById(id);
         if (section) {
@@ -14,61 +13,40 @@ const Footer = () => {
     };
 
     return (
-        <footer
-            className="w-full bg-[#29344A] py-8 text-gray-300"
-            style={{ fontFamily: "Montserrat, sans-serif" }}
-        >
-            <div className="container mx-auto flex md:flex-row flex-col md:flex-row justify-center items-start md:items-center px-4">
+        <footer className="w-full bg-[#29344A] py-8 text-gray-300" style={{ fontFamily: "Montserrat, sans-serif" }}>
+            <div className="flex md:flex-row flex-col justify-between items-start md:items-center px-4">
                 <div className="flex flex-row space-x-4">
                     <Image
                         src={'/b2b-vetor.svg'}
                         alt='B2 Frotas Personalização'
-                        width={140}
+                        width={180}
                         height={50}
                         priority
-                    />
-                    <Image
-                        src={'/1989.webp'}
-                        alt="30 anos"
-                        width={140}
-                        height={50}
-                        priority
+                        className="md:ml-10"
                     />
                 </div>
-                <div className="flex flex-col mt-10 md:flex-row space-y-6 md:space-y-0 ml-6 md:space-x-12">
+                <div className="flex flex-col text-lg md:flex-row space-y-6 md:space-y-0 md:space-x-12">
                     <div>
-                        <h4 className="text-white font-bold mb-3">NAVEGAÇÃO</h4>
+                        <h4 className="text-white font-bold">NAVEGAÇÃO</h4>
                         <NavigationMenu>
                             <NavigationMenuList className="flex flex-col items-start justify-start space-y-2">
                                 <NavigationMenuItem>
-                                    <NavigationMenuLink
-                                        onClick={() => handleScroll('home')}
-                                        className="hover:text-white hover:cursor-pointer transition-colors"
-                                    >
+                                    <NavigationMenuLink onClick={() => handleScroll('home')} className="hover:text-white hover:cursor-pointer transition-colors">
                                         HOME
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <NavigationMenuLink
-                                        onClick={() => handleScroll('about')}
-                                        className="hover:text-white hover:cursor-pointer transition-colors"
-                                    >
+                                    <NavigationMenuLink onClick={() => handleScroll('about')} className="hover:text-white hover:cursor-pointer transition-colors">
                                         SOBRE NÓS
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <NavigationMenuLink
-                                        onClick={() => handleScroll('portfolio')}
-                                        className="hover:text-white hover:cursor-pointer transition-colors"
-                                    >
+                                    <NavigationMenuLink onClick={() => handleScroll('portfolio')} className="hover:text-white hover:cursor-pointer transition-colors">
                                         PORTFÓLIO
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <NavigationMenuLink
-                                        onClick={() => handleScroll('contact')}
-                                        className="hover:text-white hover:cursor-pointer transition-colors"
-                                    >
+                                    <NavigationMenuLink onClick={() => handleScroll('contact')} className="hover:text-white hover:cursor-pointer transition-colors">
                                         CONTATO
                                     </NavigationMenuLink>
                                 </NavigationMenuItem>
@@ -76,7 +54,7 @@ const Footer = () => {
                         </NavigationMenu>
                     </div>
                     <div>
-                        <h4 className="text-white font-bold mb-3 font-montserrat">CONTATOS</h4>
+                        <h4 className="text-white font-bold mb-3">CONTATOS</h4>
                         <ul className="space-y-2">
                             <li>
                                 <a href="tel:+554733085589" className="hover:text-white transition-colors">
@@ -85,7 +63,7 @@ const Footer = () => {
                                 </a>
                             </li>
                             <li>
-                                <a href="mailto:contato@empresa.com" className="hover:text-white transition-colors">
+                                <a href="mailto:empresab2frotas@gmail.com" className="hover:text-white transition-colors">
                                     <FontAwesomeIcon icon={faEnvelope} className="mr-2 align-middle" />
                                     empresab2frotas@gmail.com
                                 </a>
@@ -98,14 +76,12 @@ const Footer = () => {
                                     rel="noopener noreferrer"
                                 >
                                     <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 align-middle" />
-                                    R. BLUMENAU, 1995 - <br />
-                                    GALPÃO 2 - DOS ESTADOS, <br />
-                                    TIMBÓ - SC, 89120-000
+                                    R. BLUMENAU, 1995 - GALPÃO 2, TIMBÓ - SC, 89120-000
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    <div className="justify-center items-center">
+                    <div>
                         <h4 className="text-white font-bold mb-3">REDES SOCIAIS</h4>
                         <ul className="space-y-2">
                             <li>
@@ -128,6 +104,16 @@ const Footer = () => {
                             </li>
                         </ul>
                     </div>
+                </div>
+                <div className="flex flex-row space-x-4">
+                    <Image
+                        src={'/1989.webp'}
+                        alt="30 anos"
+                        width={200}
+                        height={50}
+                        priority
+                        className="pr-10"
+                    />
                 </div>
             </div>
         </footer>

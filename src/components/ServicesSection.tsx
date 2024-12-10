@@ -50,12 +50,12 @@ const ServicesSection = () => {
                     <div
                         key={service.id}
                         style={{ background: 'rgba(41,52,74,255)' }}
-                        className="text-white rounded-2xl p-6 flex flex-col items-center transform transition-transform duration-200 hover:scale-105"
+                        className="text-white w-full rounded-2xl p-6 flex flex-col items-center transform transition-transform duration-200 hover:scale-105"
                     >
                         <div
-                            className="flex items-center justify-center text-center"
+                            className="flex items-start justify-center text-center"
                             style={{
-                                height: '6rem', 
+                                height: '4rem', 
                                 overflow: 'hidden',
                             }}
                         >
@@ -72,7 +72,7 @@ const ServicesSection = () => {
                         <Image
                             src={service.imageUrl}
                             alt={service.title}
-                            className="w-full h-40 rounded-2xl cursor-pointer"
+                            className="w-full h-50 rounded-2xl cursor-pointer"
                             onClick={() => openModal(service.imageUrl)}
                             width={500}
                             height={300}
