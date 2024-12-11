@@ -35,6 +35,7 @@ const HomeSection = () => {
 
     return (
         <section id="home">
+            <div className='w-full min-w-full h-[10px]' style={{ background: 'rgba(41,52,74,255)' }}/>
             {compressedImage ? (
                 <Image
                     src={compressedImage}
