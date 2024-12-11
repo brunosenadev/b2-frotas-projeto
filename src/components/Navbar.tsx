@@ -2,7 +2,6 @@ import React, { useState, useEffect, memo } from 'react';
 import {
     NavigationMenu,
     NavigationMenuItem,
-    NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import Image from 'next/image';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
