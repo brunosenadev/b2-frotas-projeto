@@ -4,9 +4,6 @@ import {
     NavigationMenuItem,
 } from "@/components/ui/navigation-menu";
 import Image from 'next/image';
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const Navbar = memo(() => {
     const [isOpen, setIsOpen] = useState(false);
@@ -48,20 +45,11 @@ const Navbar = memo(() => {
                 />
             </div>
             <NavigationMenu
-                className="min-w-full w-full h-[70%] lg:min-h-[80px] min-h-[60px] items-center md:justify-start text-start px-4 sm:justify-start"
+                className="min-w-full w-full h-[70%] lg:min-h-[80px] min-h-[60px] justify-end pr-4 md:pr-0 items-center md:justify-center text-center"
 
             >
-                <div className='md:flex lg:mr-8 hidden'>
-                    <Image
-                        src={'/1989-fundobranco.jpeg'}
-                        alt='1989-logo'
-                        width={60}
-                        height={15}
-                        quality={100}
-                    />
-                </div>
-                <div className="flex flex-col w-full lg:flex-row lg:w-[60%]">
-                    <div className="hidden space-x-8 md:flex mr-8 md:text-center justify-center">
+                <div>
+                    <div className="hidden space-x-8 md:flex mr-8 justify-center">
                         <NavigationMenuItem
                             className="text-white mx-1 text-2xl pr-12 font-semibold list-none hover:cursor-pointer border-r-4 border-white last:border-r-0 mt-2 whitespace-nowrap"
                             style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)', whiteSpace: 'no-wrap' }}
@@ -102,39 +90,9 @@ const Navbar = memo(() => {
                         >
                             CONTATO
                         </NavigationMenuItem>
-                        <NavigationMenuItem
-                            className="text-white text-2xl font-semibold list-none hover:cursor-pointer"
-                            style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
-                            onClick={() => {
-                                handleScroll('contact');
-                                setIsOpen(false);
-                            }}
-                        >
-                            <a href="https://wa.me/554788086608" target="_blank" rel="noopener noreferrer" className='text-white font-semibold mr-4 lg:mr-0'>
-                                <FontAwesomeIcon icon={faWhatsapp} className="mr-2 lg:mr-0 text-5xl align-middle font-semibold" style={{ color: '#25D366' }} />
-                            </a>
-                        </NavigationMenuItem>
-                    </div>
-                    <div className="sm:hidden md:hidden lg:flex lg:flex-col lg:pl-0 lg:ml-0 xl:flex-row sm:justify-start sm:text-center sm:pb-2 lg:items-center">
-                        <a
-                            href="tel:+554733085589"
-                            className="font-semibold mr-4 whitespace-nowrap"
-                            style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
-                        >
-                            <FontAwesomeIcon icon={faPhone} className="mr-2 align-middle" />
-                            (47) 3308-5589
-                        </a>
-                        <a
-                            href="mailto:empresab2frotas@gmail.com"
-                            className="font-semibold whitespace-nowrap"
-                            style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
-                        >
-                            <FontAwesomeIcon icon={faEnvelope} className="mr-2 align-middle" />
-                            empresab2frotas@gmail.com
-                        </a>
                     </div>
                 </div>
-                <div className="md:hidden flex items-center justify-center ml-2">
+                <div className="md:hidden flex items-center justify-end ml-2">
                     <button onClick={toggleMenu} className="focus:outline-none">
                         <div className="flex flex-col">
                             <span className="block w-8 h-1 bg-black mb-1"></span>
