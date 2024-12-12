@@ -48,7 +48,7 @@ const Navbar = memo(() => {
                 />
             </div>
             <NavigationMenu
-                className="min-w-full w-full h-[70%] lg:min-h-[80px] min-h-[60px] items-center md:justify-center text-start px-4 sm:justify-start"
+                className="min-w-full w-full h-[70%] lg:min-h-[80px] min-h-[60px] items-center md:justify-start text-start px-4 sm:justify-start"
 
             >
                 <div className='md:flex lg:mr-8 hidden'>
@@ -60,7 +60,7 @@ const Navbar = memo(() => {
                         quality={100}
                     />
                 </div>
-                <div className="flex flex-col lg:flex-row lg:w-[60%]">
+                <div className="flex flex-col w-full lg:flex-row lg:w-[60%]">
                     <div className="hidden space-x-8 md:flex mr-8 md:text-center justify-center">
                         <NavigationMenuItem
                             className="text-white mx-1 text-2xl pr-12 font-semibold list-none hover:cursor-pointer border-r-4 border-white last:border-r-0 mt-2 whitespace-nowrap"
@@ -115,7 +115,7 @@ const Navbar = memo(() => {
                             </a>
                         </NavigationMenuItem>
                     </div>
-                    <div className='sm:justify-center flex md:flex-col sm:text-center sm:pb-2 lg:items-center lg:flex-row'>
+                    <div className='sm:justify-start flex flex-col sm:text-center sm:pb-2 lg:items-center lg:flex-row'>
                         <a href="tel:+554733085589" className="font-semibold mr-4 whitespace-nowrap" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}>
                             <FontAwesomeIcon icon={faPhone} className="mr-2 align-middle" />
                             (47) 3308-5589
@@ -126,7 +126,7 @@ const Navbar = memo(() => {
                         </a>
                     </div>
                 </div>
-                <div className="md:hidden flex items-center justify-center ml-10">
+                <div className="md:hidden flex items-center justify-center ml-2">
                     <button onClick={toggleMenu} className="focus:outline-none">
                         <div className="flex flex-col">
                             <span className="block w-8 h-1 bg-black mb-1"></span>
