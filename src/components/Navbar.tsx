@@ -4,9 +4,6 @@ import {
     NavigationMenuItem,
 } from "@/components/ui/navigation-menu";
 import Image from 'next/image';
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 const Navbar = memo(() => {
     const [isOpen, setIsOpen] = useState(false);
