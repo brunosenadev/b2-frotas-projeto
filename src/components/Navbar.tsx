@@ -37,94 +37,94 @@ const Navbar = memo(() => {
     return (
         <div>
             <div
-                className='flex items-center justify-center w-full pt-6 pb-6'
+                className='w-full flex items-center justify-center pt-6 pb-6'
                 style={{ background: 'rgba(41,52,74,255)' }}
             >
                 <Image
                     src={'/b2b-vetor.svg'}
                     alt='b2-logo'
                     width={400}
-                    height={200}
+                    height={400}
                 />
             </div>
             <NavigationMenu
-                className="min-w-full w-full h-[70%] min-h-[60px] items-center justify-center text-start px-4"
+                className="min-w-full w-full h-[70%] lg:min-h-[80px] min-h-[60px] items-center md:justify-center text-start px-4 sm:justify-start"
 
             >
-                <div className='mr-10'>
+                <div className='md:flex lg:mr-8 hidden'>
                     <Image
                         src={'/1989-fundobranco.jpeg'}
                         alt='1989-logo'
-                        width={50}
+                        width={60}
                         height={15}
                         quality={100}
                     />
                 </div>
-                <div className="hidden space-x-8 md:flex mr-8">
-                    <NavigationMenuItem
-                        className="text-white mx-1 text-2xl pr-12 font-semibold list-none hover:cursor-pointer border-r-4 border-white last:border-r-0 mt-2"
-                        style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
-                        onClick={() => {
-                            handleScroll('home');
-                            setIsOpen(false);
-                        }}
-                    >
-                        HOME
-                    </NavigationMenuItem>
-                    <NavigationMenuItem
-                        className="text-white mx-4 text-2xl font-semibold pr-12 list-none hover:cursor-pointer border-r-4 border-white last:border-r-0 mt-2"
-                        style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
-                        onClick={() => {
-                            handleScroll('about');
-                            setIsOpen(false);
-                        }}
-                    >
-                        SOBRE NÓS
-                    </NavigationMenuItem>
-                    <NavigationMenuItem
-                        className="text-white mx-4 text-2xl font-semibold pr-12 list-none hover:cursor-pointer  border-r-4 border-white last:border-r-0 mt-2"
-                        style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
-                        onClick={() => {
-                            handleScroll('portfolio');
-                            setIsOpen(false);
-                        }}
-                    >
-                        PORTFÓLIO
-                    </NavigationMenuItem>
-                    <NavigationMenuItem
-                        className="text-white mx-4 text-2xl font-semibold list-none hover:cursor-pointer mt-2"
-                        style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
-                        onClick={() => {
-                            handleScroll('contact');
-                            setIsOpen(false);
-                        }}
-                    >
-                        CONTATO
-                    </NavigationMenuItem>
-                    <NavigationMenuItem
-                        className="text-white text-2xl font-semibold list-none hover:cursor-pointer"
-                        style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
-                        onClick={() => {
-                            handleScroll('contact');
-                            setIsOpen(false);
-                        }}
-                    >
-                        <a href="https://wa.me/554788086608" target="_blank" rel="noopener noreferrer" className='text-white font-semibold mr-4'>
-                            <FontAwesomeIcon icon={faWhatsapp} className="mr-2 text-5xl align-middle font-semibold" style={{ color: '#25D366' }} />
+                <div className="flex flex-col lg:flex-row lg:w-[60%]">
+                    <div className="hidden space-x-8 md:flex mr-8 md:text-center justify-center">
+                        <NavigationMenuItem
+                            className="text-white mx-1 text-2xl pr-12 font-semibold list-none hover:cursor-pointer border-r-4 border-white last:border-r-0 mt-2 whitespace-nowrap"
+                            style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)', whiteSpace: 'no-wrap' }}
+                            onClick={() => {
+                                handleScroll('home');
+                                setIsOpen(false);
+                            }}
+                        >
+                            HOME
+                        </NavigationMenuItem>
+                        <NavigationMenuItem
+                            className="text-white mx-4 text-2xl font-semibold pr-12 list-none hover:cursor-pointer border-r-4 border-white last:border-r-0 mt-2 whitespace-nowrap"
+                            style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
+                            onClick={() => {
+                                handleScroll('about');
+                                setIsOpen(false);
+                            }}
+                        >
+                            SOBRE NÓS
+                        </NavigationMenuItem>
+                        <NavigationMenuItem
+                            className="text-white mx-4 text-2xl font-semibold pr-12 list-none hover:cursor-pointer  border-r-4 border-white last:border-r-0 mt-2 whitespace-nowrap"
+                            style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
+                            onClick={() => {
+                                handleScroll('portfolio');
+                                setIsOpen(false);
+                            }}
+                        >
+                            PORTFÓLIO
+                        </NavigationMenuItem>
+                        <NavigationMenuItem
+                            className="text-white mx-4 text-2xl font-semibold list-none hover:cursor-pointer mt-2 whitespace-nowrap"
+                            style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
+                            onClick={() => {
+                                handleScroll('contact');
+                                setIsOpen(false);
+                            }}
+                        >
+                            CONTATO
+                        </NavigationMenuItem>
+                        <NavigationMenuItem
+                            className="text-white text-2xl font-semibold list-none hover:cursor-pointer"
+                            style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
+                            onClick={() => {
+                                handleScroll('contact');
+                                setIsOpen(false);
+                            }}
+                        >
+                            <a href="https://wa.me/554788086608" target="_blank" rel="noopener noreferrer" className='text-white font-semibold mr-4'>
+                                <FontAwesomeIcon icon={faWhatsapp} className="mr-2 text-5xl align-middle font-semibold" style={{ color: '#25D366' }} />
+                            </a>
+                        </NavigationMenuItem>
+                    </div>
+                    <div className='sm:justify-center flex md:flex-col sm:text-center sm:pb-2 lg:items-center lg:flex-row'>
+                        <a href="tel:+554733085589" className="font-semibold mr-4 whitespace-nowrap" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}>
+                            <FontAwesomeIcon icon={faPhone} className="mr-2 align-middle" />
+                            (47) 3308-5589
                         </a>
-                    </NavigationMenuItem>
-                </div>
-                <div
-                    className="min-h-[30px] flex items-end justify-end md:flex ml-8"
-                >
-                    <a href="tel:+554733085589" className="font-semibold mr-4" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}>
-                        <FontAwesomeIcon icon={faPhone} className="mr-2 align-middle" />
-                        (47) 3308-5589
-                    </a>
-                    <a href="mailto:empresab2frotas@gmail.com" className="font-semibold" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}>
-                        <FontAwesomeIcon icon={faEnvelope} className="mr-2 align-middle" />
-                        empresab2frotas@gmail.com
-                    </a>
+                        <a href="mailto:empresab2frotas@gmail.com" className="font-semibold whitespace-nowrap" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}>
+                            <FontAwesomeIcon icon={faEnvelope} className="mr-2 align-middle" />
+                            empresab2frotas@gmail.com
+                        </a>
+                    </div>
                 </div>
                 <div className="md:hidden flex items-center justify-center ml-10">
                     <button onClick={toggleMenu} className="focus:outline-none">
