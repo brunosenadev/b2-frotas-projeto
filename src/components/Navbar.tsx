@@ -115,7 +115,7 @@ const Navbar = memo(() => {
                             </a>
                         </NavigationMenuItem>
                     </div>
-                    <div className="sm:hidden md:hidden lg:flex lg:flex-col lg:pl-0 lg:ml-0 flex-row sm:justify-start sm:text-center sm:pb-2 lg:items-center">
+                    <div className="sm:hidden md:hidden lg:flex lg:flex-col lg:pl-0 lg:ml-0 xl:flex-row sm:justify-start sm:text-center sm:pb-2 lg:items-center">
                         <a
                             href="tel:+554733085589"
                             className="font-semibold mr-4 whitespace-nowrap"
