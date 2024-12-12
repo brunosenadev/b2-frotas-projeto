@@ -110,17 +110,25 @@ const Navbar = memo(() => {
                                 setIsOpen(false);
                             }}
                         >
-                            <a href="https://wa.me/554788086608" target="_blank" rel="noopener noreferrer" className='text-white font-semibold mr-4'>
-                                <FontAwesomeIcon icon={faWhatsapp} className="mr-2 text-5xl align-middle font-semibold" style={{ color: '#25D366' }} />
+                            <a href="https://wa.me/554788086608" target="_blank" rel="noopener noreferrer" className='text-white font-semibold mr-4 lg:mr-0'>
+                                <FontAwesomeIcon icon={faWhatsapp} className="mr-2 lg:mr-0 text-5xl align-middle font-semibold" style={{ color: '#25D366' }} />
                             </a>
                         </NavigationMenuItem>
                     </div>
-                    <div className='sm:justify-start flex flex-col sm:text-center sm:pb-2 lg:items-center lg:flex-row'>
-                        <a href="tel:+554733085589" className="font-semibold mr-4 whitespace-nowrap" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}>
+                    <div className="sm:hidden md:hidden lg:flex lg:flex-col lg:pl-0 lg:ml-0 flex-row sm:justify-start sm:text-center sm:pb-2 lg:items-center">
+                        <a
+                            href="tel:+554733085589"
+                            className="font-semibold mr-4 whitespace-nowrap"
+                            style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
+                        >
                             <FontAwesomeIcon icon={faPhone} className="mr-2 align-middle" />
                             (47) 3308-5589
                         </a>
-                        <a href="mailto:empresab2frotas@gmail.com" className="font-semibold whitespace-nowrap" style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}>
+                        <a
+                            href="mailto:empresab2frotas@gmail.com"
+                            className="font-semibold whitespace-nowrap"
+                            style={{ fontFamily: 'Montserrat, sans-serif', color: 'rgba(41,52,74,255)' }}
+                        >
                             <FontAwesomeIcon icon={faEnvelope} className="mr-2 align-middle" />
                             empresab2frotas@gmail.com
                         </a>
