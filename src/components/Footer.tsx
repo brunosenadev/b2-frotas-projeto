@@ -14,7 +14,7 @@ const Footer = () => {
 
     return (
         <footer className="w-full bg-[#29344A] py-8 text-gray-300" style={{ fontFamily: "Montserrat, sans-serif" }}>
-            <div className="flex md:flex-row flex-col justify-between items-start md:items-center px-4">
+            <div className="flex md:flex-row flex-col md:justify-between items-center md:items-center px-4">
                 <div className="flex flex-row space-x-4">
                     <Image
                         src={'/b2b-vetor.svg'}
@@ -25,11 +25,11 @@ const Footer = () => {
                         className="md:ml-10"
                     />
                 </div>
-                <div className="flex flex-col text-lg md:flex-row space-y-6 md:space-y-0 md:space-x-12">
-                    <div>
+                <div className="flex flex-col justify-center items-center text-center text-lg md:text-2xl md:flex-row space-y-6 md:space-y-0 md:space-x-12">
+                    <div className="mt-4 md:mt-0">
                         <h4 className="text-white font-bold">NAVEGAÇÃO</h4>
                         <NavigationMenu>
-                            <NavigationMenuList className="flex flex-col items-start justify-start space-y-2">
+                            <NavigationMenuList className="flex flex-col space-y-2">
                                 <NavigationMenuItem>
                                     <NavigationMenuLink onClick={() => handleScroll('home')} className="hover:text-white hover:cursor-pointer transition-colors">
                                         HOME
@@ -112,7 +112,7 @@ const Footer = () => {
                         width={200}
                         height={50}
                         priority
-                        className="pr-10"
+                        className="mt-4"
                     />
                 </div>
             </div>
