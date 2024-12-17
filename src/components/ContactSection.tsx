@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Contact from './Contact';
 import Map from '@/components/Map';
 
-const ContactSection = () => {
+const ContactSection = memo(() => {
     return (
         <section
             id='contact'
@@ -78,6 +78,6 @@ const ContactSection = () => {
             </div>
         </section>
     )
-};
+});
 
 export default ContactSection;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, memo } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Autoplay } from 'swiper/modules';
@@ -12,54 +12,55 @@ interface Empresa {
   imagens: string[];
 }
 
-const PortfolioSection = () => {
+const PortfolioSection = memo(() => {
   const [empresas, setEmpresas] = useState<Empresa[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentEmpresa, setCurrentEmpresa] = useState<Empresa | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Carregamento otimizado dos dados
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('/empresasimagens.json');
-      const data = await response.json();
-      setEmpresas(data);
-      setCurrentEmpresa(data[0]);
+      try {
+        const response = await fetch('/empresasimagens.json');
+        if (!response.ok) throw new Error('Failed to fetch data');
+        const data = await response.json();
+        setEmpresas(data);
+        setCurrentEmpresa(data[0]);
+      } catch (error) {
+        console.error(error);
+      }
     };
 
     fetchData();
   }, []);
 
-  // Função de abrir o modal com as imagens
-  const openModal = (empresa: Empresa, imageIndex: number) => {
+  const openModal = useCallback((empresa: Empresa, imageIndex: number) => {
     setCurrentEmpresa(empresa);
     setCurrentImageIndex(imageIndex);
     setIsModalOpen(true);
-  };
+  }, []);
 
-  // Função de fechar o modal
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsModalOpen(false);
-    setCurrentEmpresa(empresas[0]);
+    setCurrentEmpresa(null);
     setCurrentImageIndex(0);
-  };
+  }, []);
 
-  // Funções para navegação entre as imagens
-  const handlePrevImage = () => {
+  const handlePrevImage = useCallback(() => {
     if (currentEmpresa) {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === 0 ? currentEmpresa.imagens.length - 1 : prevIndex - 1
       );
     }
-  };
+  }, [currentEmpresa]);
 
-  const handleNextImage = () => {
+  const handleNextImage = useCallback(() => {
     if (currentEmpresa) {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === currentEmpresa.imagens.length - 1 ? 0 : prevIndex + 1
       );
     }
-  };
+  }, [currentEmpresa]);
 
   const empresaSlides = useMemo(
     () =>
@@ -69,7 +70,7 @@ const PortfolioSection = () => {
             <Image
               src={empresa.imagens[0]}
               alt={`Imagem de ${empresa.nome}`}
-              width={300} 
+              width={300}
               height={100}
               className="w-full h-60"
               loading="lazy"
@@ -84,7 +85,7 @@ const PortfolioSection = () => {
           </div>
         </SwiperSlide>
       )),
-    [empresas]
+    [empresas, openModal] // Garante que 'openModal' não seja recriado e re-renderize desnecessariamente
   );
 
   return (
@@ -170,6 +171,6 @@ const PortfolioSection = () => {
       )}
     </section>
   );
-};
+});
 
 export default PortfolioSection;

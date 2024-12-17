@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import Image from 'next/image';
 import imageCompression from 'browser-image-compression';
 
-const HomeSection = () => {
+const HomeSection = memo(() => {
     const [compressedImage, setCompressedImage] = useState('');
 
     useEffect(() => {
@@ -49,6 +49,6 @@ const HomeSection = () => {
             )}
         </section>
     );
-};
+});
 
 export default HomeSection;
