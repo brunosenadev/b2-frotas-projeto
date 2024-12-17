@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Image from "next/image";
 
-const AboutSection = () => {
+const AboutSection = memo(() => {
     return (
         <section
             id="about"
@@ -106,6 +106,6 @@ const AboutSection = () => {
             </div>
         </section>
     );
-};
+});
 
 export default AboutSection;

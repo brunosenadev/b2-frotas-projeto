@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import Image from 'next/image';
 
 const services = [
@@ -29,7 +29,7 @@ const services = [
     },
 ];
 
-const ServicesSection = () => {
+const ServicesSection = memo(() => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [currentImage, setCurrentImage] = useState<string>('');
 
@@ -106,6 +106,6 @@ const ServicesSection = () => {
             )}
         </section>
     );
-};
+});
 
 export default ServicesSection;

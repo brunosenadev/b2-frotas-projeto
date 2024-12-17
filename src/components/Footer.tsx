@@ -3,8 +3,9 @@ import Image from "next/image";
 import { faPhone, faEnvelope, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp, faInstagram, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { memo } from 'react';
 
-const Footer = () => {
+const Footer = memo(() => {
     const handleScroll = (id: string) => {
         const section = document.getElementById(id);
         if (section) {
@@ -118,6 +119,6 @@ const Footer = () => {
             </div>
         </footer>
     );
-};
+});
 
 export default Footer;
